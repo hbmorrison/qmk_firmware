@@ -1,6 +1,6 @@
 # Hannah's Ferris Sweep Layout
 
-This is my first attempt at a layout for my new Ferris Scoop. I am attempting to
+This is my first attempt at a layout for my new Ferris Sweep. I am attempting to
 integrate Colemak DH, which is new to me, and keep everything else as familiar
 as possible, so I have tried to take my cues for numbers and symbols from the UK
 ISO keyboard layout that I know.
