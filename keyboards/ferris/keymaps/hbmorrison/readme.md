@@ -8,11 +8,18 @@ ISO keyboard layout that I know.
 Broadly speaking, this is designed to be a one-shot layout. The base layer has a
 one-shot shift key on the left thumb and one-shot layer change to layer one on
 the right thumb so most of the time will be spent in the base layer and, aside
-from the homerow modifiers, there will be no chording or comboing.
+from the homerow modifiers, there is no chording or comboing.
 
-Layers two and three are sticky and require a thumb keypress to return to the
-base layer so that numerals, navigation, brightness controls and so on can be
-entered consistently.
+In practice, a single tap of the layer key gets to the symbol layer and a double
+tap of the layer key gets to the navigation and numeral layer. Most of the time
+you will be tapping the layer key once, hitting a symbol then carrying on. It
+was a conscious decision to favour tapping, for example, layer, equals, layer,
+right angled bracket, space, layer, dollar then typing a variable name over
+mixing in a variety of tapping and holding modifiers.
+
+Layers two and three remain are not one-shot so that numerals, navigation,
+brightness controls and so on can be entered and modified consistently. A press
+of the return to base layer thumb key is required to get back to the base layer.
 
 ## Base layer
 
@@ -35,32 +42,27 @@ available for numerals and navigation.
 
 ## Layer one: symbols
 
-![Layer 1](https://i.imgur.com/fm7dvZp.png)
+![Layer 1](https://i.imgur.com/hd9YTNV.png)
 
 Layer one is influenced by the layout of symbols on UK ISO keyboards. Escape and
 Tab appear on the left hand side and the symbols that appear above 2 to 8 appear
 across the top row. Underscore / minus and plus / equals appear at the right
-hand side as separate keys.
+hand side as pairs of separate keys situated above and below each other.
 
 In the middle there are similar pairs of keys that are usually found to the
-right of the middle row: tilde / hash, at / quote, colon / semicolon. The pipe /
-backslash pair also appears here even though it is usually found at the bottom
-left, so that all of the pairs of keys are located in the same cluster. On the
-left side there are pairs of braces and brackets. Finally on the bottom right
-there is the missing exclamation mark, which is placed on the same key as the
-shifted question mark in the base layer. The right angled bracket also appears
-even though it is available shifted in the base layer, because it may feel more
-natural to type => as a double L1 tap.
+right of the middle row: tilde / hash, at / quote and colon / semicolon. On the
+bottom right there is the exclamation mark that would have appeared above the
+number one position if there was space, but which is now placed on the same key
+as the shifted question mark in the base layer. The right angled bracket is also
+available because it may feel more natural to type => as a double L1 tap. The
+pipe / backslash key pair appears on the far left and taking up the rest of the
+left side there are pairs of braces and brackets.
 
-Shift and enter remain available on the inside left and right thumb keys. These
-remain throughout the layers for consistency. The outside left thumb key returns
-to base layer. Outside of the base layer the outside left always returns to the
-base layer so an easy way to fail safe back to the base layer from anywhere is
-to tap the outside right then outside left thumb keys.
-
-The outside right thumb key goes to layer two and the bottom left key goes to
-layer three. These are not one shot keys so the keyboard will remain in layer
-two and three until the return to layer one key is pressed.
+Shift and enter remain available on the inside left and right thumb keys. The
+outside left thumb key returns to base layer. The outside right thumb key goes
+to layer two and the bottom left key goes to layer three. These are not one shot
+keys so the keyboard will remain in layer two or three until the return to base
+layer key is pressed.
 
 ## Layer two: numerals and navigation
 
