@@ -1,4 +1,4 @@
-# Hannah's Ferris Scoop Layout
+# Hannah's Ferris Sweep Layout
 
 This is my first attempt at a layout for my new Ferris Scoop. I am attempting to
 integrate Colemak DH, which is new to me, and keep everything else as familiar
