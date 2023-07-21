@@ -38,9 +38,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NUM_LAYER] = LAYOUT_split_3x5_2(
       TD(TD_1_ESC), KC_2, KC_3, KC_4, KC_5,
           KC_6, KC_7, KC_8, KC_9, KC_0,
-      KC_CAPS, KC_NO, KC_NO, KC_BTN1, KC_BTN2,
+      LCTL(KC_TAB), LALT(KC_TAB), LGUI(KC_TAB), KC_BTN1, KC_BTN2,
           KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_DEL,
-      TO(FUNC_LAYER), KC_NO, KC_NO, LSFT(KC_V), KC_COLN,
+      TO(FUNC_LAYER), KC_NO, KC_NO, KC_NO, LSFT(KC_V),
           KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_INS,
       TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
   ),
