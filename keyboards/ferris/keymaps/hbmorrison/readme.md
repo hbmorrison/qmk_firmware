@@ -114,9 +114,7 @@ If you decide to use the latter workflow, here are the steps to follow:
   keymap by running a command such as this one from the root of your qmk repo:
 
 ```shell
-./keyboards/handwired/ferris/keymaps/json2crab.py --input <Your download
-directory>/default.json >
-./keyboards/handwired/ferris/keymaps/default/keymap.json
+./keyboards/handwired/ferris/keymaps/json2crab.py --input <Your download directory>/default.json > ./keyboards/handwired/ferris/keymaps/default/keymap.json
 ```
 
 Note that you may first need to make json2crab executable by using `chmod +x` on
