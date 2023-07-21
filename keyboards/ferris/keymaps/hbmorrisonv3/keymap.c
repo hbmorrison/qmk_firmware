@@ -8,17 +8,17 @@ enum my_layers {
 };
 
 enum my_tap_dances {
-  TD_Q_ESC,
   TD_Z_CAPS,
   TD_X_CUT,
   TD_C_COPY,
   TD_V_PASTE,
-  TD_1_ESC
+  TD_F_PGDN,
+  TD_B_PGUP
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE_LAYER] = LAYOUT_split_3x5_2(
-      TD(TD_Q_ESC), KC_W, KC_F, KC_P, KC_B,
+      KC_Q, KC_W, TD(TD_F_PGDN), KC_P, TD(TD_B_PGUP),
           KC_J, KC_L, KC_U, KC_Y, KC_BSPC,
       LSFT(KC_A), LCTL(KC_R), LALT_T(KC_S), LGUI_T(KC_T), KC_G,
           KC_M, LGUI_T(KC_N), LALT_T(KC_E), LCTL_T(KC_I), LSFT_T(KC_O),
@@ -27,16 +27,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       OSM(MOD_LSFT), KC_SPC, KC_ENT, OSL(SYM_LAYER)
   ),
   [SYM_LAYER] = LAYOUT_split_3x5_2(
-      KC_GRV, KC_DQUO, LSFT(KC_3), KC_DLR, KC_PERC,
+      KC_ESC, KC_DQUO, LSFT(KC_3), KC_DLR, KC_PERC,
           KC_CIRC, KC_AMPR, KC_ASTR, KC_UNDS, KC_PLUS,
       KC_TAB, KC_PIPE, KC_LBRC, KC_LCBR, KC_LPRN,
           KC_COLN, KC_AT, KC_TILD, KC_MINS, KC_EQL,
       TO(FUNC_LAYER), KC_NUBS, KC_RBRC, KC_RCBR, KC_RPRN,
-          KC_SCLN, KC_QUOT, KC_HASH, KC_NO, KC_EXLM,
+          KC_SCLN, KC_QUOT, KC_HASH, KC_GRV, KC_EXLM,
       TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NUM_LAYER)
   ),
   [NUM_LAYER] = LAYOUT_split_3x5_2(
-      TD(TD_1_ESC), KC_2, KC_3, KC_4, KC_5,
+      KC_1, KC_2, KC_3, KC_4, KC_5,
           KC_6, KC_7, KC_8, KC_9, KC_0,
       LCTL(KC_TAB), LALT(KC_TAB), LGUI(KC_TAB), KC_BTN1, KC_BTN2,
           KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_DEL,
@@ -63,8 +63,6 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 
 // Tap dance definitions
 tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Q, twice for Esc
-    [TD_Q_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),
     // Tap once for Z, twice for Caps Lock
     [TD_Z_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_CAPS),
     // Tap once for X, twice for Ctrl-X
@@ -73,8 +71,10 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_C_COPY] = ACTION_TAP_DANCE_DOUBLE(KC_C, KC_COPY),
     // Tap once for V, twice for Ctrl-V
     [TD_V_PASTE] = ACTION_TAP_DANCE_DOUBLE(KC_V, KC_PSTE),
-    // Tap once for 1, twice for Esc
-    [TD_1_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_ESC)
+    // Tap once for F, twice for Ctrl-F
+    [TD_F_PGDN] = ACTION_TAP_DANCE_DOUBLE(KC_F, LCTL(KC_F)),
+    // Tap once for B, twice for Ctrl-B
+    [TD_B_PGUP] = ACTION_TAP_DANCE_DOUBLE(KC_B, LCTL(KC_B)),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -103,4 +103,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
-
