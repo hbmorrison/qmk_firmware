@@ -5,21 +5,17 @@ integrate Colemak DH, which is new to me, and keep everything else as familiar
 as possible, so I have tried to take my cues for numbers and symbols from the UK
 ISO keyboard layout that I know.
 
-Broadly speaking, this is designed to be a one-shot layout. The base layer has a
-one-shot `shift` key on the left thumb and one-shot layer change to layer one on
-the right thumb so most of the time will be spent in the base layer and, aside
-from the homerow modifiers, there is no chording or comboing.
+Broadly speaking, this is designed to a layout where keys and modifiers are
+tapped rather than held down. Aside from homerow modifiers, there is no chording
+or comboing. In practice, a single tap of the layer key gets to the symbols
+layer and a double tap of the layer key gets to the numbers and navigation
+layer. Most of the time you will be tapping the layer key once, hitting a symbol
+then carrying on in the base layer.
 
-In practice, a single tap of the layer key gets to the Symbols layer and a
-double tap of the layer key gets to the Numbers and Navigation layer. Most of
-the time you will be tapping the layer key once, hitting a symbol then carrying
-on. This was a conscious decision to favour tapping over holding down shift, or
-having to retain knowledge of which layer the keyboard is in.
-
-The Numbers and Navigation layer is not one-shot to allow for the extended entry
-of numbers and extended navigation. The Utility layer is intended as a one-shot
-shortcut to various symbol keys for performing calculations with numbers while
-in the Numbers and Navigation layer.
+The numbers and navigation layer is sticky to allow for the extended entry of
+numbers and extended navigation. The Utility layer is intended as a shortcut to
+various symbol keys for performing calculations with numbers while in the
+numbers and navigation layer.
 
 ## Base Layer
 
@@ -27,63 +23,73 @@ in the Numbers and Navigation layer.
 
 The base layer uses Colemak DH 2020 with `shift` on the outside left thumb key,
 `space` on the inside left thumb key, `enter` on the inside right thumb key and
-layer one on the outside right thumb key. The `backspace` key is available at
-the top right.
+`L1` (layer one) on the outside right thumb key. The `backspace` key is
+available at the top right. When tapped, `shift` key that will capitalise or
+shift the next key that is tapped. It does nothing when held down. Similarly,
+the `L1` key will switch to the symbols layer and return to the base layer
+immediately after a single symbol key has been tapped.
 
 Homerow modifiers are available on the following keys:
 
-* Hold `A` or `O` for `Shift`
-* Hold `R` or `I` for `Control`
-* Hold `S` or `E` for `Alt`
-* Hold `T` or `N` for `GUI` / `Win`
+* Hold `A` or `O` for `shift`
+* Hold `R` or `I` for `control`
+* Hold `S` or `E` for `alt`
+* Hold `T` or `N` for `win` / `cmd`
 
 Note that this layout of homerow modifiers is mirrored in layer two.
 
 ## Layer One: Symbols
 
-![Layer 1](https://i.imgur.com/zYAz1a4.png)
+![Symbols Layer](https://i.imgur.com/zYAz1a4.png)
 
 Layer one is influenced by the layout of symbols on UK ISO keyboards. The
 `escape` and `tab` keys are on the left hand side and the symbols usually found
-above `2` to `8` are on the top row. The `underscore` / `minus` and `plus` /
-`equals` are on the right hand side as pairs of separate keys situated above and
+above `2` to `8` are on the top row. The `minus` / `underscore` and `equals` /
+`plus` are on the right hand side as pairs of separate keys situated above and
 below each other.
 
 In the middle there are similar pairs of keys that are usually found to the
-right of the middle row: `tilde` / `hash`, `at` / `quote` and `colon` /
-`semicolon`. On the bottom right there is the `exclamation mark` that would have
+right of the middle row: `hash` / `tilde` , `quote` / `at`  and `semicolon` /
+`colon`. On the bottom right there is the `exclamation mark` key that would have
 appeared above the number one position if there was space, but which is now
-placed on the same key as the shifted `question mark` in the base layer. The
-`grave` is on the bottom right as a compromise because there is no room on the
-top left of any layer for it. The `backslash` / `pipe` key pair is on the far
-left and taking up the rest of the left side there are pairs of braces and
+placed on the same key as the `slash` / `question mark` in the base layer. The
+`grave` key is on the bottom right as a compromise because there is no room on
+the top left of any layer for it. The `backslash` / `pipe` key pair is on the
+far left and taking up the rest of the left side there are pairs of braces and
 brackets.
 
-The `shift` and `enter` keys remain available on the inside left and right thumb
-keys. The outside left thumb key returns to base layer. The outside right thumb
-key goes to layer two and the bottom left key goes to layer three.
+The `shift` and `enter` keys remain on the inside left and right thumb keys. The
+outside left thumb key, `L0`, returns to the base layer. `L2` on the outside
+right thumb key goes to the numbers and navigation layer and `L3` at the bottom
+left goes to the utility layer.
 
 ## Layer Two: Numbers and Navigation
 
-![Layer 2](https://i.imgur.com/ytmFjSk.png)
+![Numbers and Navigation Layer](https://i.imgur.com/ytmFjSk.png)
 
 Numbers appear along the top row as they do on standard keyboards. On the right
 side the navigation keys are arranged on the traditional Vim navigation keys
 (`hjkl` in QWERTY keyboards) with the `home`, `page down`, `page up` and `end`
-keys below them. The `delete` and insert keys are on the far right.
+keys below them. The `delete` and `insert` keys are on the far right.
 
-On the left there is a `caps lock` key and the bottom left key goes to layer
-three. Media keys take up most of the rest of the left hand side. The final keys
-on the inside of the left side are Vim shortcuts: `capital-V` to enter visual
-mode and `colon` to enter cmdline mode.
+On the left there is a `caps lock` key and `L3` at the bottom left goes to the
+utility layer. Media keys take up most of the rest of the left hand side. The
+final keys on the inside of the left side are Vim shortcuts: `capital-v` to
+enter visual mode and `colon` to enter cmdline mode.
+
+The thumb keys remain consistent on all layers: `shift` and `enter` on the
+inside keys and `L0` on the outside left thumb key.
 
 ## Layer three: Utility
 
-![Layer 3](https://i.imgur.com/5irKSZc.png)
+![Utility Layer](https://i.imgur.com/5irKSZc.png)
 
 This layer is still a work in progress. At the moment it contains a mirror of
-various symbols required for calculations that can be accessed from the Numbers
-and Navigation layer quickly. The left hand side has all twelve function keys.
+various symbols required for calculations that can be accessed from the numbers
+and navigation layer quickly. The left hand side has all twelve function keys.
+
+Again the thumb keys remain consistent on all layers: `shift` and `enter` on the
+inside keys and `L0` on the outside left thumb key.
 
 ## Where is the keymap.c?
 
