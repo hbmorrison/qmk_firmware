@@ -1,9 +1,9 @@
-# Hannah's Ferris Sweep Layout
+# Hannah's Ferris Sweep Layout v3
 
-This is my first attempt at a layout for my new Ferris Sweep. I am attempting to
-integrate Colemak DH, which is new to me, and keep everything else as familiar
-as possible, so I have tried to take my cues for numbers and symbols from the UK
-ISO keyboard layout that I know.
+This is the third iteration of my  first attempt at a layout for my new Ferris
+Sweep. I am attempting to integrate Colemak DH, which is new to me, and keep
+everything else as familiar as possible, so I have tried to take my cues for
+numbers and symbols from the UK ISO keyboard layout that I know.
 
 Broadly speaking, this is designed to a layout where keys and modifiers are
 tapped rather than held down. Aside from homerow modifiers, there is no chording
