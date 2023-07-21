@@ -19,10 +19,12 @@ base layer.
 The base layer uses Colemak DH 2020 with `shift` on the outside left thumb key,
 `space` on the inside left thumb key, `enter` on the inside right thumb key and
 `sym layer` on the outside right thumb key. The `backspace` key is available at
-the top right. When tapped, the `shift` key that will capitalise or shift the
-next key that is tapped. It does nothing when held down. Similarly, the `sym
-layer` key will switch to the **symbol layer** and return to the **base layer**
-immediately after a single symbol key has been tapped.
+the top right.
+
+When tapped, the `shift` key capitalises or shifts the next key that is tapped.
+It does nothing when held down. The `sym layer` key switches the keyboard into
+the **symbol layer** for one key press only, and the keyboard will return to the
+**base layer** immediately after a symbol key has been tapped.
 
 Homerow modifiers are available on the following keys:
 
@@ -34,14 +36,11 @@ Homerow modifiers are available on the following keys:
 Tap dance is enabled and double taps on the following keys produce different key
 presses:
 
-* Double tapping the `Q` key produces `Esc`
-* Double tapping the `Z` key produces `Caps Lock`
-* Double tapping the `X` key produces `Control-X` (i.e. cut)
-* Double tapping the `C` key produces `Control-V` (i.e. copy)
-* Double tapping the `V` key produces `Control-C` (i.e. paste)
-
-This reduces the need to hold the homerow modifiers down and press additional
-keys.
+* Double tapping the `Q` key produces `esc`
+* Double tapping the `Z` key produces `caps lock`
+* Double tapping the `X` key produces `control-X` (i.e. cut)
+* Double tapping the `C` key produces `control-V` (i.e. copy)
+* Double tapping the `V` key produces `control-C` (i.e. paste)
 
 ## Symbol Layer
 
@@ -59,19 +58,22 @@ right of the middle row: `hash` / `tilde` , `quote` / `at`  and `semicolon` /
 appeared above the number one position if there was space, but which is now
 placed on the same key as the `slash` / `question mark` in the base layer. The
 `backslash` / `pipe` key pair is on the far left and taking up the rest of the
-left side there are pairs of braces and brackets.
+left side there are pairs of braces and brackets. The `func layer` key at the
+bottom left will switch the keyboard into the **function layer**.
 
-The `shift` and `enter` keys remain on the inside left and right thumb keys. The
-outside left thumb key, `base layer`, returns to the **base layer**. `num layer`
-on the outside right thumb key goes to the **number layer** and `func layer` at
-the bottom left goes to the **function layer**.
+The `num layer` key on the outside right thumb key switches the keyboard into
+the **number layer**. The `shift` and `enter` keys remain on the inside left and
+right thumb keys and the outside left thumb key becomes `base layer`, which
+returns the keyboard to the **base layer**. As well as emitting their key
+presses, the `space` and `enter` keys will also return the keyboard to the
+**base layer** when tapped.
 
 ## Number Layer
 
 ![Number Layer](https://i.imgur.com/uP7fdmD.png)
 
 Numbers appear along the top row as they do on standard sized keyboards. As with
-the base layer, the top left key is a tap dance key that will produce `Esc` if
+the base layer, the top left key is a tap dance key that will produce `esc` if
 it is double tapped.
 
 On the right side the navigation keys are arranged on the traditional Vim
@@ -79,14 +81,19 @@ navigation key locations (`hjkl` in QWERTY keyboards) with the `home`, `page
 down`, `page up` and `end` keys below them. The `delete` and `insert` keys are
 on the far right.
 
-On the bottom left the `func layer` key goes to the **function layer**. The
-`left button` and `right button` keys serve as alternative mouse buttons when
-using an external trackball or trackpad. The final keys on the left side are Vim
-shortcuts: `capital-v` to enter visual mode and `colon` to enter cmdline mode.
+On the bottom left the `func layer` key switches the keyboard into the
+**function layer**. The `left button` and `right button` keys serve as
+alternative mouse buttons when using an external trackball or trackpad.
+
+There are a set of `tab` keys on the left hand side for navigating between tabs
+and windows: `control-tab`, `alt-tab` and `win/cmd-tab`.
+
+The final keys on the left side are Vim shortcuts: `capital-V` to enter visual
+mode and `colon` to enter cmdline mode.
 
 The thumb keys remain consistent: `shift` and `enter` on the inside keys and
-`base layer` on the outside left thumb key. All three of these keys return to
-the **base layer**.
+`base layer` on the outside left thumb key. All three of these keys return the
+keyboard to the **base layer**.
 
 ## Function Layer
 
@@ -108,7 +115,7 @@ mirror their positions in lower layers.
 
 Again the thumb keys remain consistent: `shift` and `enter` on the inside keys
 and `base layer` on the outside left thumb key. All three of these keys return
-to the **base layer**.
+the keyboard to the **base layer**.
 
 ##  How To Compile and Flash the Firmware
 
