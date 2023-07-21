@@ -6,7 +6,7 @@ as possible, so I have tried to take my cues for numbers and symbols from the UK
 ISO keyboard layout that I know.
 
 Broadly speaking, this is designed to be a one-shot layout. The base layer has a
-one-shot shift key on the left thumb and one-shot layer change to layer one on
+one-shot `shift` key on the left thumb and one-shot layer change to layer one on
 the right thumb so most of the time will be spent in the base layer and, aside
 from the homerow modifiers, there is no chording or comboing.
 
@@ -25,41 +25,43 @@ in the Numbers and Navigation layer.
 
 ![Base Layer](https://i.imgur.com/NUZzOuL.png)
 
-The base layer uses Colemak DH 2020 with shift on the outside left thumb key,
-space on the inside left thumb key, enter on the inside right thumb key and
-layer one on the outside right thumb key. Backspace is available on top right
-key.
+The base layer uses Colemak DH 2020 with `shift` on the outside left thumb key,
+`space` on the inside left thumb key, `enter` on the inside right thumb key and
+layer one on the outside right thumb key. The `backspace` key is available at
+the top right.
 
 Homerow modifiers are available on the following keys:
 
-* Hold A or O for Shift
-* Hold R or I for Control
-* Hold S or E for Alt
-* Hold T or N for GUI / Windows
+* Hold `A` or `O` for `Shift`
+* Hold `R` or `I` for `Control`
+* Hold `S` or `E` for `Alt`
+* Hold `T` or `N` for `GUI` / `Win`
 
-Note that this layout of modifiers is mirrored in layer two.
+Note that this layout of homerow modifiers is mirrored in layer two.
 
 ## Layer One: Symbols
 
 ![Layer 1](https://i.imgur.com/zYAz1a4.png)
 
-Layer one is influenced by the layout of symbols on UK ISO keyboards. Escape and
-Tab appear on the left hand side and the symbols that appear above 2 to 8 appear
-across the top row. Underscore / minus and plus / equals appear at the right
-hand side as pairs of separate keys situated above and below each other.
+Layer one is influenced by the layout of symbols on UK ISO keyboards. The
+`escape` and `tab` keys are on the left hand side and the symbols usually found
+above `2` to `8` are on the top row. The `underscore` / `minus` and `plus` /
+`equals` are on the right hand side as pairs of separate keys situated above and
+below each other.
 
 In the middle there are similar pairs of keys that are usually found to the
-right of the middle row: tilde / hash, at / quote and colon / semicolon. On the
-bottom right there is the exclamation mark that would have appeared above the
-number one position if there was space, but which is now placed on the same key
-as the shifted question mark in the base layer. The grave appears at the bottom
-right as a compromise because there is no room on the top left of any layer for
-it. The pipe / backslash key pair appears on the far left and taking up the rest
-of the left side there are pairs of braces and brackets.
+right of the middle row: `tilde` / `hash`, `at` / `quote` and `colon` /
+`semicolon`. On the bottom right there is the `exclamation mark` that would have
+appeared above the number one position if there was space, but which is now
+placed on the same key as the shifted `question mark` in the base layer. The
+`grave` is on the bottom right as a compromise because there is no room on the
+top left of any layer for it. The `backslash` / `pipe` key pair is on the far
+left and taking up the rest of the left side there are pairs of braces and
+brackets.
 
-Shift and enter keys remain available on the inside left and right thumb keys.
-The outside left thumb key returns to base layer. The outside right thumb key
-goes to layer two and the bottom left key goes to layer three.
+The `shift` and `enter` keys remain available on the inside left and right thumb
+keys. The outside left thumb key returns to base layer. The outside right thumb
+key goes to layer two and the bottom left key goes to layer three.
 
 ## Layer Two: Numbers and Navigation
 
@@ -67,13 +69,13 @@ goes to layer two and the bottom left key goes to layer three.
 
 Numbers appear along the top row as they do on standard keyboards. On the right
 side the navigation keys are arranged on the traditional Vim navigation keys
-(hjkl in QWERTY keyboards) with the home, page down, page up and end keys below
-them. The delete and insert keys appear on the far right.
+(`hjkl` in QWERTY keyboards) with the `home`, `page down`, `page up` and `end`
+keys below them. The `delete` and insert keys are on the far right.
 
-On the left there is a caps lock key and the bottom left key goes to layer
+On the left there is a `caps lock` key and the bottom left key goes to layer
 three. Media keys take up most of the rest of the left hand side. The final keys
-on the inside of the left side are Vim shortcuts: capital-V to enter visual mode
-and colon to enter cmdline mode.
+on the inside of the left side are Vim shortcuts: `capital-V` to enter visual
+mode and `colon` to enter cmdline mode.
 
 ## Layer three: Utility
 
