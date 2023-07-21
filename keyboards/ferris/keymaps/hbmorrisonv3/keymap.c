@@ -1,0 +1,78 @@
+#include QMK_KEYBOARD_H
+
+enum my_layers {
+  BASE_LAYER,
+  SYMBOL_LAYER,
+  NUMNAV_LAYER,
+  FUNCTION_LAYER
+};
+
+enum my_tap_dances {
+  TD_Q_ESC,
+  TD_Z_CAPS,
+  TD_X_CUT,
+  TD_C_COPY,
+  TD_V_PASTE,
+  TD_1_ESC
+};
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  [BASE_LAYER] = LAYOUT_split_3x5_2(
+      TD(TD_Q_ESC), KC_W, KC_F, KC_P, KC_B,
+          KC_J, KC_L, KC_U, KC_Y, KC_BSPC,
+      LSFT(KC_A), LCTL(KC_R), LALT_T(KC_S), LGUI_T(KC_T), KC_G,
+          KC_M, LGUI_T(KC_N), LALT_T(KC_E), LCTL_T(KC_I), LSFT_T(KC_O),
+      TD(TD_Z_CAPS), TD(TD_X_CUT), TD(TD_C_COPY), KC_D, TD(TD_V_PASTE),
+          KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH,
+      OSM(MOD_LSFT), KC_SPC, KC_ENT, OSL(SYMBOL_LAYER)
+  ),
+  [SYMBOL_LAYER] = LAYOUT_split_3x5_2(
+      KC_GRV, KC_DQUO, LSFT(KC_3), KC_DLR, KC_PERC,
+          KC_CIRC, KC_AMPR, KC_ASTR, KC_UNDS, KC_PLUS,
+      KC_TAB, KC_PIPE, KC_LBRC, KC_LCBR, KC_LPRN,
+          KC_COLN, KC_AT, KC_TILD, KC_MINS, KC_EQL,
+      TO(FUNCTION_LAYER), KC_NUBS, KC_RBRC, KC_RCBR, KC_RPRN,
+          KC_SCLN, KC_QUOT, KC_HASH, KC_NO, KC_EXLM,
+      TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NUMNAV_LAYER)
+  ),
+  [NUMNAV_LAYER] = LAYOUT_split_3x5_2(
+      TD(TD_1_ESC), KC_2, KC_3, KC_4, KC_5,
+          KC_6, KC_7, KC_8, KC_9, KC_0,
+      KC_CAPS, KC_NO, KC_NO, KC_BTN1, KC_BTN2,
+          KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_DEL,
+      TO(FUNCTION_LAYER), KC_NO, KC_NO, LSFT(KC_V), KC_COLN,
+          KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_INS,
+      TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
+  ),
+  [FUNCTION_LAYER] = LAYOUT_split_3x5_2(
+      KC_F1, KC_F2, KC_F3, KC_F4, KC_MNXT,
+          KC_BRIU, KC_VOLU, KC_ASTR, KC_NO, KC_PLUS,
+      KC_F5, KC_F6, KC_F7, KC_F8, KC_MPLY,
+          KC_BRID, KC_VOLD, KC_NO, KC_MINS, KC_EQL,
+      KC_F9, KC_F10, KC_F11, KC_F12, KC_MPRV,
+          KC_NO, KC_MUTE, KC_NO, KC_DOT, KC_SLSH,
+      TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
+  )
+};
+
+#if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+
+};
+#endif // defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
+
+// Tap dance definitions
+tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Q, twice for Esc
+    [TD_Q_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),
+    // Tap once for Z, twice for Caps Lock
+    [TD_Z_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_CAPS),
+    // Tap once for X, twice for Ctrl-X
+    [TD_X_CUT] = ACTION_TAP_DANCE_DOUBLE(KC_X, KC_CUT),
+    // Tap once for C, twice for Ctrl-C
+    [TD_C_COPY] = ACTION_TAP_DANCE_DOUBLE(KC_C, KC_COPY),
+    // Tap once for V, twice for Ctrl-V
+    [TD_V_PASTE] = ACTION_TAP_DANCE_DOUBLE(KC_V, KC_PSTE),
+    // Tap once for 1, twice for Esc
+    [TD_1_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_ESC)
+};
