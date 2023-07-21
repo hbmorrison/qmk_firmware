@@ -2,9 +2,9 @@
 
 enum my_layers {
   BASE_LAYER,
-  SYMBOL_LAYER,
-  NUMNAV_LAYER,
-  FUNCTION_LAYER
+  SYM_LAYER,
+  NUM_LAYER,
+  FUNC_LAYER
 };
 
 enum my_tap_dances {
@@ -24,27 +24,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_M, LGUI_T(KC_N), LALT_T(KC_E), LCTL_T(KC_I), LSFT_T(KC_O),
       TD(TD_Z_CAPS), TD(TD_X_CUT), TD(TD_C_COPY), KC_D, TD(TD_V_PASTE),
           KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH,
-      OSM(MOD_LSFT), KC_SPC, KC_ENT, OSL(SYMBOL_LAYER)
+      OSM(MOD_LSFT), KC_SPC, KC_ENT, OSL(SYM_LAYER)
   ),
-  [SYMBOL_LAYER] = LAYOUT_split_3x5_2(
+  [SYM_LAYER] = LAYOUT_split_3x5_2(
       KC_GRV, KC_DQUO, LSFT(KC_3), KC_DLR, KC_PERC,
           KC_CIRC, KC_AMPR, KC_ASTR, KC_UNDS, KC_PLUS,
       KC_TAB, KC_PIPE, KC_LBRC, KC_LCBR, KC_LPRN,
           KC_COLN, KC_AT, KC_TILD, KC_MINS, KC_EQL,
-      TO(FUNCTION_LAYER), KC_NUBS, KC_RBRC, KC_RCBR, KC_RPRN,
+      TO(FUNC_LAYER), KC_NUBS, KC_RBRC, KC_RCBR, KC_RPRN,
           KC_SCLN, KC_QUOT, KC_HASH, KC_NO, KC_EXLM,
-      TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NUMNAV_LAYER)
+      TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NUM_LAYER)
   ),
-  [NUMNAV_LAYER] = LAYOUT_split_3x5_2(
+  [NUM_LAYER] = LAYOUT_split_3x5_2(
       TD(TD_1_ESC), KC_2, KC_3, KC_4, KC_5,
           KC_6, KC_7, KC_8, KC_9, KC_0,
       KC_CAPS, KC_NO, KC_NO, KC_BTN1, KC_BTN2,
           KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_DEL,
-      TO(FUNCTION_LAYER), KC_NO, KC_NO, LSFT(KC_V), KC_COLN,
+      TO(FUNC_LAYER), KC_NO, KC_NO, LSFT(KC_V), KC_COLN,
           KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_INS,
       TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
   ),
-  [FUNCTION_LAYER] = LAYOUT_split_3x5_2(
+  [FUNC_LAYER] = LAYOUT_split_3x5_2(
       KC_F1, KC_F2, KC_F3, KC_F4, KC_MNXT,
           KC_BRIU, KC_VOLU, KC_ASTR, KC_NO, KC_PLUS,
       KC_F5, KC_F6, KC_F7, KC_F8, KC_MPLY,
@@ -76,3 +76,31 @@ tap_dance_action_t tap_dance_actions[] = {
     // Tap once for 1, twice for Esc
     [TD_1_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_ESC)
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    // Return to the base later after fn keys, space or enter have been pressed
+    case KC_F1 ... KC_F12:
+    case KC_SPC:
+    case KC_ENT:
+      if (record->event.pressed) {
+        layer_move(BASE_LAYER);
+      }
+      break;
+    // Return to num layer if symbol keys in the func layer have been pressed
+    case KC_ASTR:
+    case KC_PLUS:
+    case KC_MINS:
+    case KC_EQL:
+    case KC_DOT:
+    case KC_SLSH:
+      if (record->event.pressed) {
+        if (IS_LAYER_ON(FUNC_LAYER)) {
+          layer_move(NUM_LAYER);
+        }
+      }
+      break;
+  }
+  return true;
+}
+
