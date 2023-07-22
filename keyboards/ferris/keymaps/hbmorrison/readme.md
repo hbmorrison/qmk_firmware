@@ -26,8 +26,8 @@ keyboards and layouts. My initial layout drew heavily from his [Ferris Sweep
 layout](https://github.com/benvallack/34-QMK-Ferris-Sweep).
 
 The contributers who make QMK possible are an incredible bunch of people and the
-community as a whole has been welcoming and helpful. Please support open source
-projects and communities, folks.
+ErgoMechKeyboard community as a whole has been welcoming and helpful. Please
+support open source projects and communities, folks.
 
  ## Base Layer
 
@@ -35,7 +35,7 @@ projects and communities, folks.
 
 The base layer uses Colemak DH 2020, with `Shift` on the outside left thumb key,
 `Space` on the inside left thumb key, `Enter` on the inside right thumb key and
-`Sym Layer` on the outside right thumb key. The `backspace` key is available at
+`Sym Layer` on the outside right thumb key. The `Backspace` key is available at
 the top right.
 
 When tapped, the `Shift` key capitalises or shifts the next key that is tapped.
@@ -72,9 +72,9 @@ to pull up the 1Password quick access window.
 
 The **symbol layer** is influenced by the way symbols are laid out on UK ISO
 keyboards. The symbols usually found above `2` to `8` are on the top row. The
-`Minus` / `Underscore` and `Equals` / `Plus` keys are on the right side as pairs
-of separate keys situated above and below each other. The `Esc` and `Tab` keys
-are on the far left side.
+`Minus` / `Underscore` and `Equals` / `Plus` keys are on the right side below
+and above each other as pairs of separate keys. The `Esc` and `Tab` keys are on
+the far left side.
 
 In the middle there are pairs of keys that are usually found to the right of the
 middle row: `Hash` / `Tilde` , `Quote` / `At`  and `Semicolon` / `Colon`. The
@@ -105,12 +105,12 @@ navigation key locations (`HJKL` in QWERTY keyboards) with the `Home`, `Page
 Down`, `Page Up` and `End` keys below them. The `Delete` and `Insert` keys are
 on the far right.
 
-There are a set of `Tab` keys on the left hand side for navigating between tabs
-and windows: `Ctrl-Tab`, `Alt-Tab` and `Win/Cmd-Tab`. On the bottom left the
-`Func Layer` key switches the keyboard into the **function layer**. The `Left
-Button` and `Right Button` keys serve as alternative mouse buttons when using an
-external trackball or trackpad. Finally `Capital-V` key is a Vim shortcut for
-entering visual mode while navigating.
+There are a set of shifted `Tab` keys on the left hand side for navigating
+between tabs and windows: `Ctrl-Tab`, `Alt-Tab` and `Win/Cmd-Tab`. On the bottom
+left the `Func Layer` key switches the keyboard into the **function layer**. The
+`Left Button` and `Right Button` keys serve as alternative mouse buttons when
+using an external trackball or trackpad. Finally, the `Capital-V` key is a Vim
+shortcut for entering visual mode while navigating.
 
 The thumb keys remain consistent: `Shift` and `Enter` on the inside keys and
 `Base Layer` on the outside left thumb key. As in the symbol layer, all three of
