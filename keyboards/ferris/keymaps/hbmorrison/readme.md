@@ -14,13 +14,13 @@ In practice, a single tap of the layer key gets to the symbol layer and a double
 tap of the same layer key gets to the number layer. Most of the time you will be
 tapping this layer key, hitting a symbol then carrying on in the base layer.
 Also, wherever you are, tapping the space or enter key will bring you back to
-the base layer. The idea is that you should have to think too much about which
-layer you are in.
+the base layer. The idea is that you should not have to think too much about
+which layer you are in most of the time.
 
 ### Credit
 
 I want to give full credit and a massive amount of thanks to [Ben
-Vallack](https://www.youtube.com/benvallack) for talking through this
+Vallack](https://www.youtube.com/benvallack) for talking through his
 tap-not-hold approach and for all of his inspirational work on ergonomic
 keyboards and layouts. My initial layout drew heavily from his [Ferris Sweep
 layout](https://github.com/benvallack/34-QMK-Ferris-Sweep).
@@ -35,14 +35,14 @@ support open source projects and communities, folks.
 
 The base layer uses [Colemak DH](https://colemakmods.github.io/mod-dh/)
 [2020](https://forum.colemak.com/topic/2638-announcement-a-change-to-colemakdh/),
-with `Shift` on the outside left thumb key, `Space` on the inside left thumb
-key, `Enter` on the inside right thumb key and `Sym Layer` on the outside right
-thumb key. The `Backspace` key is available at the top right.
+with a `Shift` thumb key on the outside left , a `Space` thumb key on the inside
+left, an `Enter` thumb key on the inside right and a `Sym Layer` thumb key on
+the outside right. The `Backspace` key is available at the top right.
 
-When tapped, the `Shift` key capitalises or shifts the next key that is tapped.
-It does nothing when held down. The `Sym Layer` key switches the keyboard into
-the **symbol layer** for one key press only, and the keyboard will return to the
-**base layer** immediately after a symbol key has been tapped.
+When tapped, the `Shift` thumb key capitalises or shifts the next key that is
+tapped. It does nothing when held down. The `Sym Layer` thumb key switches the
+keyboard into the **symbol layer** for one key press only, and the keyboard will
+return to the **base layer** immediately after a symbol key has been tapped.
 
 Tap dance is enabled and double taps on the following keys produce different key
 presses:
@@ -63,7 +63,7 @@ Homerow modifiers are available on the following keys:
 
 These keys can be held down alone or in combination. For example, on Windows you
 might hold down the `E` key - for `Alt` - then tap `F` followed by `S` to access
-the File menu followed by the Save menu entry. Or, if you use 1Password you
+the File menu followed by the Save menu entry. Or, if you use 1Password, you
 might hold down `I` and `O` together - for `Ctrl` and `Shift` - then tap `Space`
 to pull up the 1Password quick access window.
 
@@ -88,19 +88,19 @@ Most of the left side is taken up by pairs of braces and brackets. The
 `Backslash` / `Pipe` key pair is on the outside of the left side and the `Func
 Layer` key at the bottom left switches the keyboard into the **function layer**.
 
-The `Num Layer` key on the outside right thumb key switches the keyboard into
-the **number layer**. The `Shift` and `Enter` keys remain on the inside left and
-right thumb keys and the outside left thumb key becomes `Base Layer`, which
-returns the keyboard to the **base layer**.
+The `Num Layer` thumb key on the outside right switches the keyboard into the
+**number layer**. The `Space` and `Enter` thumb keys remain on the inside left
+and right, and the outside left thumb key becomes `Base Layer`, which returns
+the keyboard to the **base layer**.
 
-As well as emitting their key presses, the `Space` and `Enter` keys will also
-return the keyboard to the **base layer** when tapped.
+As well as producing their respective key presses, the `Space` and `Enter` thumb
+keys will also return the keyboard to the **base layer** when tapped.
 
 ## Number Layer
 
 ![Number Layer](https://i.imgur.com/4O1JeJv.png)
 
-The top row is taken up by numbers as they appear on standard sized keyboards.
+The top row is taken up by numbers as they appear on standard-sized keyboards.
 On the right side the navigation keys are arranged on the traditional Vim
 navigation key locations (`HJKL` in QWERTY keyboards) with the `Home`, `Page
 Down`, `Page Up` and `End` keys below them. The `Delete` and `Insert` keys are
@@ -113,9 +113,9 @@ left the `Func Layer` key switches the keyboard into the **function layer**. The
 using an external trackball or trackpad. Finally, the `Capital-V` key is a Vim
 shortcut for entering visual mode while navigating.
 
-The thumb keys remain consistent: `Shift` and `Enter` on the inside keys and
-`Base Layer` on the outside left thumb key. As in the symbol layer, all three of
-these keys return the keyboard to the **base layer**.
+The thumb keys remain consistent: the `Space` and `Enter` thumb keys are on the
+inside and the `Base Layer` thumb key is on the outside left. As with the symbol
+layer, all three of these keys return the keyboard to the **base layer**.
 
 ## Function Layer
 
@@ -127,7 +127,7 @@ keys are tapped the keyboard returns to the **base layer**.
 Media controls are on the inside of the left side. These keys are sticky so
 music tracks can be skipped, played and paused without the layer changing.
 Volume adjustment, mute and screen brightness adjustment keys are on the inside
-of the right side. These keys are also sticky so they can be pressed repeatedly.
+of the right side. These keys are also sticky so they can be tapped repeatedly.
 
 The rest of the right side has a number of symbols that can be used in
 conjunction with the number layer to perform calculations. When any of these
@@ -135,9 +135,9 @@ symbols are tapped the keyboard will return to the **number layer**. This is
 intended to simplify working with a calculator. The positions of the symbols
 mirror their positions in lower layers.
 
-Again the thumb keys remain consistent: `Shift` and `Enter` on the inside keys
-and `Base Layer` on the outside left thumb key. All three of these keys return
-the keyboard to the **base layer**.
+Again, the thumb keys remain consistent: the `Space` and `Enter` thumb keys are
+on the inside and the `Base Layer` thumb key is on the outside left. All three
+of these keys return the keyboard to the **base layer**.
 
 ##  How To Compile and Flash RP2040 Firmware
 
