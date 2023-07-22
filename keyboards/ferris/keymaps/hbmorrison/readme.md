@@ -160,6 +160,10 @@ have just pressed `Space` or `Enter`, or you will have typed a letter or a
 symbol, and you will know that you are in the **base layer**, so you will only
 have to tap the *outside right* thumb key once to reach the **symbol layer**.
 
+Strictly speaking, the same could be said about the first sequence of taps as
+well, but is useful to remember *outside right*, *outside left* as a panic
+sequence of sorts to get back to the beginning and clear your head.
+
 ##  How To Compile and Flash RP2040 Firmware
 
 First compile the firmware as normal:
