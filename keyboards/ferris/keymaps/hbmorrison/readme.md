@@ -35,7 +35,7 @@ projects and communities, folks.
 ![Base Layer](https://i.imgur.com/vcj6LgG.png)
 
 The base layer uses Colemak DH 2020 with `Shift` on the outside left thumb key,
-`space` on the inside left thumb key, `Enter` on the inside right thumb key and
+`Space` on the inside left thumb key, `Enter` on the inside right thumb key and
 `Sym Layer` on the outside right thumb key. The `backspace` key is available at
 the top right.
 
