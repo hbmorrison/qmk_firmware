@@ -1,10 +1,9 @@
 # Hannah's Ferris Sweep Layout
 
-This is my first attempt at a layout for my new Ferris Sweep. I am attempting to
-integrate Colemak DH, which is new to me and is my first alternative key layout,
-and keep everything else as familiar as possible, so I have tried to take my
-cues for numbers and symbols from the UK ISO keyboard layout that I am familiar
-with.
+This is my first attempt at a layout for my new Ferris Sweep. I have chosen to
+use Colemak DH - my first alternative key layout - so I have tried to take my
+cues for numbers and symbols from the UK ISO keyboard layout to keep everything
+else as familiar as possible.
 
 Broadly speaking, this is designed as a layout where keys and modifiers are
 tapped rather than held down. Aside from homerow modifiers there is no chording
@@ -34,7 +33,7 @@ projects and communities, folks.
 
 ![Base Layer](https://i.imgur.com/vcj6LgG.png)
 
-The base layer uses Colemak DH 2020 with `Shift` on the outside left thumb key,
+The base layer uses Colemak DH 2020, with `Shift` on the outside left thumb key,
 `Space` on the inside left thumb key, `Enter` on the inside right thumb key and
 `Sym Layer` on the outside right thumb key. The `backspace` key is available at
 the top right.
@@ -62,21 +61,20 @@ Homerow modifiers are available on the following keys:
 * Hold `T` or `N` for `Win/Cmd`
 
 These keys can be held down alone or in combination. For example, on Windows you
-might hold down the `E` key, for `Alt`, then tap `F` followed by `S` to access
+might hold down the `E` key - for `Alt` - then tap `F` followed by `S` to access
 the File menu followed by the Save menu entry. Or, if you use 1Password you
-might hold down `I` and `O` together, for `Ctrl` and `Shift`, then tap `Space`
-to pull up the quick access window.
+might hold down `I` and `O` together - for `Ctrl` and `Shift` - then tap `Space`
+to pull up the 1Password quick access window.
 
  ## Symbol Layer
 
 ![Symbol Layer](https://i.imgur.com/xQuMMJ9.png)
 
-The **symbol layer** is influenced by the layout of symbols on UK ISO keyboards.
-The `Esc` and `Tab` keys are on the far left side and the `Func Layer` key at
-the bottom left switches the keyboard into the **function layer**. The symbols
-usually found above `2` to `8` are on the top row. The `Minus` / `Underscore`
-and `Equals` / `Plus` keys are on the right side as pairs of separate keys
-situated above and below each other.
+The **symbol layer** is influenced by the way symbols are laid out on UK ISO
+keyboards. The symbols usually found above `2` to `8` are on the top row. The
+`Minus` / `Underscore` and `Equals` / `Plus` keys are on the right side as pairs
+of separate keys situated above and below each other. The `Esc` and `Tab` keys
+are on the far left side.
 
 In the middle there are pairs of keys that are usually found to the right of the
 middle row: `Hash` / `Tilde` , `Quote` / `At`  and `Semicolon` / `Colon`. The
@@ -85,26 +83,27 @@ the number one position if there was space, but which is now placed on the same
 key as the `Slash/Question mark` key in the base layer. The `Grave` key appears
 beside it, also in a compromise position.
 
-The `Backslash` / `Pipe` key pair is on the far left and taking up the rest of
-the left side there are pairs of braces and brackets.
+Most of the left side is taken up by pairs of braces and brackets. The
+`Backslash` / `Pipe` key pair is on the outside of the left side and the `Func
+Layer` key at the bottom left switches the keyboard into the **function layer**.
 
 The `Num Layer` key on the outside right thumb key switches the keyboard into
 the **number layer**. The `Shift` and `Enter` keys remain on the inside left and
 right thumb keys and the outside left thumb key becomes `Base Layer`, which
-returns the keyboard to the **base layer**. As well as emitting their key
-presses, the `Space` and `Enter` keys will also return the keyboard to the
-**base layer** when tapped.
+returns the keyboard to the **base layer**.
+
+As well as emitting their key presses, the `Space` and `Enter` keys will also
+return the keyboard to the **base layer** when tapped.
 
 ## Number Layer
 
 ![Number Layer](https://i.imgur.com/uP7fdmD.png)
 
-Numbers go along the top row as they do on standard sized keyboards. On the
-right side the navigation keys are arranged on the traditional Vim navigation
-key locations (`HJKL` in QWERTY keyboards) with the `Home`, `Page Down`, `Page
-Up` and `End` keys below them. The `Delete` and `Insert` keys are on the far
-right.
-
+The top row is taken up by numbers as they appear on standard sized keyboards.
+On the right side the navigation keys are arranged on the traditional Vim
+navigation key locations (`HJKL` in QWERTY keyboards) with the `Home`, `Page
+Down`, `Page Up` and `End` keys below them. The `Delete` and `Insert` keys are
+on the far right.
 
 There are a set of `Tab` keys on the left hand side for navigating between tabs
 and windows: `Ctrl-Tab`, `Alt-Tab` and `Win/Cmd-Tab`. On the bottom left the
@@ -114,8 +113,8 @@ external trackball or trackpad. Finally `Capital-V` key is a Vim shortcut for
 entering visual mode while navigating.
 
 The thumb keys remain consistent: `Shift` and `Enter` on the inside keys and
-`Base Layer` on the outside left thumb key. All three of these keys return the
-keyboard to the **base layer**.
+`Base Layer` on the outside left thumb key. As in the symbol layer, all three of
+these keys return the keyboard to the **base layer**.
 
 ## Function Layer
 
