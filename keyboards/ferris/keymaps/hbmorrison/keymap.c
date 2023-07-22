@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE_LAYER] = LAYOUT_split_3x5_2(
       KC_Q, KC_W, TD(TD_F_PGDN), KC_P, TD(TD_B_PGUP),
           KC_J, KC_L, KC_U, KC_Y, KC_BSPC,
-      LSFT(KC_A), LCTL(KC_R), LALT_T(KC_S), LGUI_T(KC_T), KC_G,
+      LSFT_T(KC_A), LCTL_T(KC_R), LALT_T(KC_S), LGUI_T(KC_T), KC_G,
           KC_M, LGUI_T(KC_N), LALT_T(KC_E), LCTL_T(KC_I), LSFT_T(KC_O),
       TD(TD_Z_CAPS), TD(TD_X_CUT), TD(TD_C_COPY), KC_D, TD(TD_V_PASTE),
           KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH,
