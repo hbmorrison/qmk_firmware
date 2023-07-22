@@ -7,20 +7,23 @@ numbers and symbols from the UK ISO keyboard layout that I am familiar with.
 
 Broadly speaking, this is designed as a layout where keys and modifiers are
 tapped rather than held down. Aside from homerow modifiers there is no chording
-or comboing and I try to use tap dancing as an alternative for commong
-situations where chording would be called for.
+or comboing and I try to use tap dancing as an alternative for common situations
+where chording would otherwise be called for.
 
-In practice, a single tap of a layer key gets to the symbol layer and a double
+In practice, a single tap of the layer key gets to the symbol layer and a double
 tap of the same layer key gets to the number layer. Most of the time you will be
-tapping this layer key once, hitting a symbol then carrying on in the base layer
-without having to think too much about it.
+tapping this layer key, hitting a symbol then carrying on in the base layer.
+Also, wherever you are, tapping the space or enter key will bring you back to
+the base layer so you should not be having to think too much about which layer
+you are in.
 
 ### Credit
 
-I want to give full credit and a massive amount of thanks to Ben Vallack for
-coming up with this tap-not-press approach and for all of his inspirational work
-on ergonomic keyboards and layouts. My initial layout drew heavily from his
-[34-key Ferris Sweep layout](https://github.com/benvallack/34-QMK-Ferris-Sweep).
+I want to give full credit and a massive amount of thanks to [Ben
+Vallack](https://www.youtube.com/benvallack) for coming up with this
+tap-not-press approach and for all of his inspirational work on ergonomic
+keyboards and layouts. My initial layout drew heavily from his [Ferris Sweep
+layout](https://github.com/benvallack/34-QMK-Ferris-Sweep).
 
 The contributers who make QMK possible are an incredible bunch of people and the
 community as a whole has been welcoming and helpful. Please support open source
@@ -30,59 +33,65 @@ projects and communities, folks.
 
 ![Base Layer](https://i.imgur.com/vcj6LgG.png)
 
-The base layer uses Colemak DH 2020 with `shift` on the outside left thumb key,
-`space` on the inside left thumb key, `enter` on the inside right thumb key and
-`sym layer` on the outside right thumb key. The `backspace` key is available at
+The base layer uses Colemak DH 2020 with `Shift` on the outside left thumb key,
+`space` on the inside left thumb key, `Enter` on the inside right thumb key and
+`Sym Layer` on the outside right thumb key. The `backspace` key is available at
 the top right.
 
-When tapped, the `shift` key capitalises or shifts the next key that is tapped.
-It does nothing when held down. The `sym layer` key switches the keyboard into
+When tapped, the `Shift` key capitalises or shifts the next key that is tapped.
+It does nothing when held down. The `Sym Layer` key switches the keyboard into
 the **symbol layer** for one key press only, and the keyboard will return to the
 **base layer** immediately after a symbol key has been tapped.
-
-Homerow modifiers are available on the following keys:
-
-* Hold `A` or `O` for `shift`
-* Hold `R` or `I` for `control`
-* Hold `S` or `E` for `alt`
-* Hold `T` or `N` for `win` / `cmd`
 
 Tap dance is enabled and double taps on the following keys produce different key
 presses:
 
-* Double tapping the `Z` key produces `caps lock`
-* Double tapping the `X` key produces `control-X` (i.e. cut)
-* Double tapping the `C` key produces `control-V` (i.e. copy)
-* Double tapping the `V` key produces `control-C` (i.e. paste)
-* Double tapping the `F` key produces `control-F` (i.e. page down in Vim)
-* Double tapping the `B` key produces `control-B` (i.e. page up in Vim)
+* Double tapping the `Z` key produces `Caps Lock`
+* Double tapping the `X` key produces `Ctrl-X` (i.e. cut)
+* Double tapping the `C` key produces `Ctrl-V` (i.e. copy)
+* Double tapping the `V` key produces `Ctrl-C` (i.e. paste)
+* Double tapping the `F` key produces `Ctrl-F` (i.e. page down in Vim)
+* Double tapping the `B` key produces `Ctrl-B` (i.e. page up in Vim)
 
-## Symbol Layer
+Homerow modifiers are available on the following keys:
+
+* Hold `A` or `O` for `Shift`
+* Hold `R` or `I` for `Ctrl`
+* Hold `S` or `E` for `Alt`
+* Hold `T` or `N` for `Win/Cmd`
+
+These keys can be held down alone or in combination. For example, on Windows you
+might hold down the `E` key, for `Alt`, then tap `F` followed by `S` to access
+the File menu followed by the Save menu entry. Or, if you use 1Password you
+might hold down `I` and `O` together, for `Ctrl` and `Shift`, then tap `Space`
+to pull up the quick access window.
+
+ ## Symbol Layer
 
 ![Symbol Layer](https://i.imgur.com/xQuMMJ9.png)
 
 The **symbol layer** is influenced by the layout of symbols on UK ISO keyboards.
-The `exc` and `tab` keys are on the far left side and the `func layer` key at
+The `Esc` and `Tab` keys are on the far left side and the `Func Layer` key at
 the bottom left switches the keyboard into the **function layer**. The symbols
-usually found above `2` to `8` are on the top row. The `minus` / `underscore`
-and `equals` / `plus` keys are on the right side as pairs of separate keys
+usually found above `2` to `8` are on the top row. The `Minus` / `Underscore`
+and `Equals` / `Plus` keys are on the right side as pairs of separate keys
 situated above and below each other.
 
 In the middle there are pairs of keys that are usually found to the right of the
-middle row: `hash` / `tilde` , `quote` / `at`  and `semicolon` / `colon`. The
-`exclamation mark` key is on the bottom right, which would have appeared above
+middle row: `Hash` / `Tilde` , `Quote` / `At`  and `Semicolon` / `Colon`. The
+`Exclamation Mark` key is on the bottom right, which would have appeared above
 the number one position if there was space, but which is now placed on the same
-key as the `slash` / `question mark` in the base layer. The `grave` key appears
+key as the `Slash/Question mark` key in the base layer. The `Grave` key appears
 beside it, also in a compromise position.
 
-The `backslash` / `pipe` key pair is on the far left and taking up the rest of
+The `Backslash` / `Pipe` key pair is on the far left and taking up the rest of
 the left side there are pairs of braces and brackets.
 
-The `num layer` key on the outside right thumb key switches the keyboard into
-the **number layer**. The `shift` and `enter` keys remain on the inside left and
-right thumb keys and the outside left thumb key becomes `base layer`, which
+The `Num Layer` key on the outside right thumb key switches the keyboard into
+the **number layer**. The `Shift` and `Enter` keys remain on the inside left and
+right thumb keys and the outside left thumb key becomes `Base Layer`, which
 returns the keyboard to the **base layer**. As well as emitting their key
-presses, the `space` and `enter` keys will also return the keyboard to the
+presses, the `Space` and `Enter` keys will also return the keyboard to the
 **base layer** when tapped.
 
 ## Number Layer
@@ -90,21 +99,21 @@ presses, the `space` and `enter` keys will also return the keyboard to the
 ![Number Layer](https://i.imgur.com/uP7fdmD.png)
 
 Numbers go along the top row as they do on standard sized keyboards. On the
-right side the navigation keys are arranged on the traditional Vim
-navigation key locations (`hjkl` in QWERTY keyboards) with the `home`, `page
-down`, `page up` and `end` keys below them. The `delete` and `insert` keys are
-on the far right.
+right side the navigation keys are arranged on the traditional Vim navigation
+key locations (`HJKL` in QWERTY keyboards) with the `Home`, `Page Down`, `Page
+Up` and `End` keys below them. The `Delete` and `Insert` keys are on the far
+right.
 
 
-There are a set of `tab` keys on the left hand side for navigating between tabs
-and windows: `control-tab`, `alt-tab` and `win/cmd-tab`. On the bottom left the
-`func layer` key switches the keyboard into the **function layer**. The `left
-button` and `right button` keys serve as alternative mouse buttons when using an
-external trackball or trackpad. Finally `capital-V` key is a Vim shortcut for
+There are a set of `Tab` keys on the left hand side for navigating between tabs
+and windows: `Ctrl-Tab`, `Alt-Tab` and `Win/Cmd-Tab`. On the bottom left the
+`Func Layer` key switches the keyboard into the **function layer**. The `Left
+Button` and `Right Button` keys serve as alternative mouse buttons when using an
+external trackball or trackpad. Finally `Capital-V` key is a Vim shortcut for
 entering visual mode while navigating.
 
-The thumb keys remain consistent: `shift` and `enter` on the inside keys and
-`base layer` on the outside left thumb key. All three of these keys return the
+The thumb keys remain consistent: `Shift` and `Enter` on the inside keys and
+`Base Layer` on the outside left thumb key. All three of these keys return the
 keyboard to the **base layer**.
 
 ## Function Layer
@@ -125,8 +134,8 @@ symbols are tapped the keyboard will return to the **number layer**. This is
 intended to simplify working with a calculator. The positions of the symbols
 mirror their positions in lower layers.
 
-Again the thumb keys remain consistent: `shift` and `enter` on the inside keys
-and `base layer` on the outside left thumb key. All three of these keys return
+Again the thumb keys remain consistent: `Shift` and `Enter` on the inside keys
+and `Base Layer` on the outside left thumb key. All three of these keys return
 the keyboard to the **base layer**.
 
 ##  How To Compile and Flash the Firmware
@@ -145,4 +154,4 @@ $ make CONVERT_TO=kb2040 ferris/sweep:default:uf2-split-left
 
 The make command will wait for the keyboard bootloader. Unplug the USB cable
 from the Ferris Sweep, hold down the top left key and while holding the key down
-plug the USB cable back into the **left-hand side** controller on the keyboard.
+plug the USB cable back into the **left-hand side controller** on the keyboard.
