@@ -125,8 +125,8 @@ keys are tapped the keyboard returns to the **base layer**.
 
 Media controls are on the inside of the left side. These keys are sticky so
 music tracks can be skipped, played and paused without the layer changing.
-Screen brightness and volume adjustment keys are on the inside of the right
-side. These keys are also sticky so they can be pressed repeatedly.
+Volume adjustment, mute and screen brightness adjustment keys are on the inside
+of the right side. These keys are also sticky so they can be pressed repeatedly.
 
 The rest of the right side has a number of symbols that can be used in
 conjunction with the number layer to perform calculations. When any of these

@@ -46,11 +46,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [FUNC_LAYER] = LAYOUT_split_3x5_2(
       KC_F1, KC_F2, KC_F3, KC_F4, KC_MNXT,
-          KC_BRIU, KC_VOLU, KC_ASTR, KC_NO, KC_PLUS,
+          KC_VOLU, KC_BRIU, KC_ASTR, KC_NO, KC_PLUS,
       KC_F5, KC_F6, KC_F7, KC_F8, KC_MPLY,
-          KC_BRID, KC_VOLD, KC_NO, KC_MINS, KC_EQL,
+          KC_VOLD, KC_BRID, KC_NO, KC_MINS, KC_EQL,
       KC_F9, KC_F10, KC_F11, KC_F12, KC_MPRV,
-          KC_NO, KC_MUTE, KC_NO, KC_DOT, KC_SLSH,
+          KC_MUTE, KC_NO, KC_NO, KC_DOT, KC_SLSH,
       TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
   )
 };
