@@ -1,9 +1,9 @@
-# Hannah's Ferris Sweep Layout
+# Hannah Blythe Morrison's Ferris Sweep Layout
 
-This is my first attempt at a layout for my new Ferris Sweep. I have chosen to
-use Colemak DH - my first alternative key layout - so I have tried to take my
-cues for numbers and symbols from the UK ISO keyboard layout to keep everything
-else as familiar as possible.
+This is my first attempt at a layout for my new Ferris Sweep. I have chosen
+learn Colemak DH - my first alternative keyboard layout - so I have tried to
+take my cues for numbers and symbols from the UK ISO keyboard layout to keep
+everything else as familiar as possible.
 
 Broadly speaking, this is designed as a layout where keys and modifiers are
 tapped rather than held down. Aside from homerow modifiers there is no chording
@@ -14,8 +14,8 @@ In practice, a single tap of the layer key gets to the symbol layer and a double
 tap of the same layer key gets to the number layer. Most of the time you will be
 tapping this layer key, hitting a symbol then carrying on in the base layer.
 Also, wherever you are, tapping the space or enter key will bring you back to
-the base layer. The idea is that you should not be having to think too much
-about which layer you are in.
+the base layer. The idea is that you should have to think too much about which
+layer you are in.
 
 ### Credit
 
@@ -33,10 +33,11 @@ support open source projects and communities, folks.
 
 ![Base Layer](https://i.imgur.com/PKvETO7.png)
 
-The base layer uses Colemak DH 2020, with `Shift` on the outside left thumb key,
-`Space` on the inside left thumb key, `Enter` on the inside right thumb key and
-`Sym Layer` on the outside right thumb key. The `Backspace` key is available at
-the top right.
+The base layer uses [Colemak DH](https://colemakmods.github.io/mod-dh/)
+[2020](https://forum.colemak.com/topic/2638-announcement-a-change-to-colemakdh/),
+with `Shift` on the outside left thumb key, `Space` on the inside left thumb
+key, `Enter` on the inside right thumb key and `Sym Layer` on the outside right
+thumb key. The `Backspace` key is available at the top right.
 
 When tapped, the `Shift` key capitalises or shifts the next key that is tapped.
 It does nothing when held down. The `Sym Layer` key switches the keyboard into
@@ -154,6 +155,6 @@ $ make CONVERT_TO=kb2040 ferris/sweep:hbmorrison:uf2-split-left
 ```
 
 Once the conversion has completed, the make command will wait for the keyboard
-bootloader to be mounted. Unplug the USB cable from the Ferris Sweep, hold down the
-top left key and while holding the key down plug the USB cable back into the
-**left-hand side controller** on the keyboard.
+bootloader to be mounted. Unplug the USB cable from the Ferris Sweep, hold down
+the top left key and, while holding the key down, plug the USB cable back into
+the **left-hand side controller** on the keyboard.
