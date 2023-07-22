@@ -105,7 +105,7 @@ navigation key locations (`HJKL` in QWERTY keyboards) with the `Home`, `Page
 Down`, `Page Up` and `End` keys below them. The `Delete` and `Insert` keys are
 on the far right.
 
-There are a set of shifted `Tab` keys on the left hand side for navigating
+There are a set of modified `Tab` keys on the left hand side for navigating
 between tabs and windows: `Ctrl-Tab`, `Alt-Tab` and `Win/Cmd-Tab`. On the bottom
 left the `Func Layer` key switches the keyboard into the **function layer**. The
 `Left Button` and `Right Button` keys serve as alternative mouse buttons when
