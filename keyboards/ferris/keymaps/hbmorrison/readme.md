@@ -14,8 +14,8 @@ In practice, a single tap of the layer key gets to the symbol layer and a double
 tap of the same layer key gets to the number layer. Most of the time you will be
 tapping this layer key, hitting a symbol then carrying on in the base layer.
 Also, wherever you are, tapping the space or enter key will bring you back to
-the base layer so you should not be having to think too much about which layer
-you are in.
+the base layer. The idea is that you should not be having to think too much
+about which layer you are in.
 
 ### Credit
 
