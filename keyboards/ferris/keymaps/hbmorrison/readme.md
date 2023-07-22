@@ -6,9 +6,9 @@ take my cues for numbers and symbols from the UK ISO keyboard layout to keep
 everything else as familiar as possible.
 
 Broadly speaking, this is designed as a layout where keys and modifiers are
-tapped rather than held down. Aside from homerow modifiers there is no chording
-or comboing and I try to use tap dancing as an alternative for common situations
-where chording would otherwise be called for.
+tapped rather than held down. Aside from the use of home row modifier keys there
+is no chording required and I try to use tap dancing as an alternative for
+common situations where chording would otherwise be called for.
 
 In practice, a single tap of the layer key gets to the symbol layer and a double
 tap of the same layer key gets to the number layer. Most of the time you will be
@@ -54,7 +54,7 @@ presses:
 * Double tapping the `F` key produces `Ctrl-F` (i.e. page down in Vim)
 * Double tapping the `B` key produces `Ctrl-B` (i.e. page up in Vim)
 
-Homerow modifiers are available on the following keys:
+Home row modifiers are available on the following keys:
 
 * Hold `A` or `O` for `Shift`
 * Hold `R` or `I` for `Ctrl`
@@ -73,16 +73,15 @@ to pull up the 1Password quick access window.
 
 The **symbol layer** is influenced by the way symbols are laid out on UK ISO
 keyboards. The symbols usually found above `2` to `8` are on the top row. The
-`Minus` / `Underscore` and `Equals` / `Plus` keys are on the right side below
-and above each other as pairs of separate keys. The `Esc` and `Tab` keys are on
-the far left side.
+`Minus` / `Underscore` and `Equals` / `Plus` keys are on the right side as pairs
+of separate keys. The `Esc` and `Tab` keys are on the far left side.
 
-In the middle there are pairs of keys that are usually found to the right of the
-middle row: `Hash` / `Tilde` , `Quote` / `At`  and `Semicolon` / `Colon`. The
-`Exclamation Mark` key is on the bottom right, which would have appeared above
-the number one position if there was space, but which is now placed on the same
-key as the `Slash/Question mark` key in the base layer. The `Grave` key appears
-beside it, also in a compromise position.
+In the middle there are more pairs of keys that are usually found to the right
+of the middle row: `Hash` / `Tilde` , `Quote` / `At`  and `Semicolon` / `Colon`.
+The `Exclamation Mark` key is on the bottom right, which would have appeared in
+the `1` position if there was space, but which is now placed on the same key as
+the `Slash/Question mark` key in the base layer as a compromise. The `Grave` key
+appears beside it, also in a compromise position.
 
 Most of the left side is taken up by pairs of braces and brackets. The
 `Backslash` / `Pipe` key pair is on the outside of the left side and the `Func
@@ -119,7 +118,7 @@ layer, all three of these keys return the keyboard to the **base layer**.
 
 ## Function Layer
 
-![Function Layer](https://i.imgur.com/7fzqd5H.png)
+![Function Layer](https://i.imgur.com/deywwSj.png)
 
 Twelve function keys take up most of the left side. When any of the function
 keys are tapped the keyboard returns to the **base layer**.
@@ -137,7 +136,29 @@ mirror their positions in lower layers.
 
 Again, the thumb keys remain consistent: the `Space` and `Enter` thumb keys are
 on the inside and the `Base Layer` thumb key is on the outside left. All three
-of these keys return the keyboard to the **base layer**.
+of these keys return the keyboard to the **base layer**. The `Num Layer` thumb
+key reappears on the far right to return the keyboard to the **number layer**.
+
+## Layer Navigation
+
+The layer navigation keys are designed so that you can move between layers in a
+predictable way without having to know which layer you are currently in.
+
+**To get to the base layer** tap the *outside right* followed by the *outside
+left* thumb keys.
+
+**To get to the number layer** tap the *outside right* thumb key twice.
+
+**To get to the function layer** tap the *outside right* thumb key followed by
+the *bottom left* key.
+
+**To get to the symbol layer** tap the *outside right*, *outside left* then
+*outside right* thumb keys.
+
+This last sequence of taps is mostly unnecessary. Most of the time, you will
+have just pressed `Space` or `Enter`, or you will have typed a letter or a
+symbol, and you will know that you are in the **base layer**, so you will only
+have to tap the *outside right* thumb key once to reach the **symbol layer**.
 
 ##  How To Compile and Flash RP2040 Firmware
 
