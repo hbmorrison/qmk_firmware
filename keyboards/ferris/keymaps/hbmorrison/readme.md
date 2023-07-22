@@ -21,8 +21,8 @@ you are in.
 ### Credit
 
 I want to give full credit and a massive amount of thanks to [Ben
-Vallack](https://www.youtube.com/benvallack) for coming up with this
-tap-not-press approach and for all of his inspirational work on ergonomic
+Vallack](https://www.youtube.com/benvallack) for talking through this
+tap-not-hold approach and for all of his inspirational work on ergonomic
 keyboards and layouts. My initial layout drew heavily from his [Ferris Sweep
 layout](https://github.com/benvallack/34-QMK-Ferris-Sweep).
 
