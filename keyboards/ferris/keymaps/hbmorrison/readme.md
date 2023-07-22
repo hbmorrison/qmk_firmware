@@ -165,14 +165,14 @@ have to tap the *outside right* thumb key once to reach the **symbol layer**.
 First compile the firmware as normal:
 
 ```shell
-$ qmk compile -kb ferris/sweep -km hbmorrison
+qmk compile -kb ferris/sweep -km hbmorrison
 ```
 
 Then convert the `ferris_sweep_hbmorrison.hex` file to a `.uf2` file for the
 rp2040 controller by running:
 
 ```shell
-$ make CONVERT_TO=kb2040 ferris/sweep:hbmorrison:uf2-split-left
+make CONVERT_TO=kb2040 ferris/sweep:hbmorrison:uf2-split-left
 ```
 
 Once the conversion has completed, the make command will wait for the keyboard
