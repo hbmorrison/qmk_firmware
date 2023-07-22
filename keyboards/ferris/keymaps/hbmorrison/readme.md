@@ -138,20 +138,22 @@ Again the thumb keys remain consistent: `Shift` and `Enter` on the inside keys
 and `Base Layer` on the outside left thumb key. All three of these keys return
 the keyboard to the **base layer**.
 
-##  How To Compile and Flash the Firmware
+##  How To Compile and Flash RP2040 Firmware
 
 First compile the firmware as normal:
 
 ```shell
-$ qmk compile -kb ferris/sweep -km hbmorrisonv3
+$ qmk compile -kb ferris/sweep -km hbmorrison
 ```
 
-Then convert it for rp2040 controller by running:
+Then convert the `ferris_sweep_hbmorrison.hex` file to a `.uf2` file for the
+rp2040 controller by running:
 
 ```shell
-$ make CONVERT_TO=kb2040 ferris/sweep:default:uf2-split-left
+$ make CONVERT_TO=kb2040 ferris/sweep:hbmorrison:uf2-split-left
 ```
 
-The make command will wait for the keyboard bootloader. Unplug the USB cable
-from the Ferris Sweep, hold down the top left key and while holding the key down
-plug the USB cable back into the **left-hand side controller** on the keyboard.
+Once the conversion has completed, the make command will wait for the keyboard
+bootloader to be mounted. Unplug the USB cable from the Ferris Sweep, hold down the
+top left key and while holding the key down plug the USB cable back into the
+**left-hand side controller** on the keyboard.
