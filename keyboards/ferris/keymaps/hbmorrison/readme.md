@@ -1,4 +1,4 @@
-# Hannah Blythe Morrison's Ferris Sweep Layout
+# Hannah's Ferris Sweep Layout
 
 This is my first attempt at a layout for my new Ferris Sweep. I have chosen
 learn Colemak DH - my first alternative keyboard layout - so I have tried to
@@ -11,11 +11,11 @@ is no chording required and I try to use tap dancing as an alternative for
 common situations where chording would otherwise be called for.
 
 In practice, a single tap of the layer key gets to the symbol layer and a double
-tap of the same layer key gets to the number layer. Most of the time you will be
-tapping this layer key, hitting a symbol then carrying on in the base layer.
-Also, wherever you are, tapping the space or enter key will bring you back to
-the base layer. The idea is that you should not have to think too much about
-which layer you are in most of the time.
+tap of the same layer key gets to the number and navigation layer. Most of the
+time you will be tapping this layer key, hitting a symbol then carrying on in
+the base layer. Also, wherever you are, tapping the space or enter key will
+bring you back to the base layer. The idea is that you should not have to think
+too much about which layer you are in most of the time.
 
 ### Credit
 
@@ -29,9 +29,9 @@ The contributers who make QMK possible are an incredible bunch of people and the
 ErgoMechKeyboard community as a whole has been welcoming and helpful. Please
 support open source projects and communities, folks.
 
- ## Base Layer
+## Base Layer
 
-![Base Layer](https://i.imgur.com/PKvETO7.png)
+![Base Layer](https://i.imgur.com/rQCSlum.png)
 
 The base layer uses [Colemak DH](https://colemakmods.github.io/mod-dh/)
 [2020](https://forum.colemak.com/topic/2638-announcement-a-change-to-colemakdh/),
@@ -67,9 +67,9 @@ the File menu followed by the Save menu entry. Or, if you use 1Password, you
 might hold down `I` and `O` together - for `Ctrl` and `Shift` - then tap `Space`
 to pull up the 1Password quick access window.
 
- ## Symbol Layer
+## Symbol Layer
 
-![Symbol Layer](https://i.imgur.com/spiYnZo.png)
+![Symbol Layer](https://i.imgur.com/zaIR99n.png)
 
 The **symbol layer** is influenced by the way symbols are laid out on UK ISO
 keyboards. The symbols usually found above `2` to `8` are on the top row. The
@@ -87,30 +87,35 @@ Most of the left side is taken up by pairs of braces and brackets. The
 `Backslash` / `Pipe` key pair is on the outside of the left side and the `Func
 Layer` key at the bottom left switches the keyboard into the **function layer**.
 
-The `Num Layer` thumb key on the outside right switches the keyboard into the
-**number layer**. The `Space` and `Enter` thumb keys remain on the inside left
-and right, and the outside left thumb key becomes `Base Layer`, which returns
-the keyboard to the **base layer**.
+The `Nav Layer` thumb key on the outside right switches the keyboard into the
+**number and navigation layer**. The `Space` and `Enter` thumb keys remain on
+the inside left and right, and the outside left thumb key becomes `Base Layer`,
+which returns the keyboard to the **base layer**.
 
 As well as producing their respective key presses, the `Space` and `Enter` thumb
 keys will also return the keyboard to the **base layer** when tapped.
 
-## Number Layer
+## Number and Navigation Layer
 
-![Number Layer](https://i.imgur.com/4O1JeJv.png)
+![Number and Navigation Layer](https://i.imgur.com/zfo0K7G.png)
 
 The top row is taken up by numbers as they appear on standard-sized keyboards.
-On the right side the navigation keys are arranged on the traditional Vim
+On the right side there are arrow keys arranged on the traditional Vim
 navigation key locations (`HJKL` in QWERTY keyboards) with the `Home`, `Page
 Down`, `Page Up` and `End` keys below them. The `Delete` and `Insert` keys are
-on the far right.
+on the inside right.
 
-There are a set of shifted `Tab` keys on the left hand side for navigating
-between tabs and windows: `Ctrl-Tab`, `Alt-Tab` and `Win/Cmd-Tab`. On the bottom
-left the `Func Layer` key switches the keyboard into the **function layer**. The
-`Left Button` and `Right Button` keys serve as alternative mouse buttons when
-using an external trackball or trackpad. Finally, the `Capital-V` key is a Vim
-shortcut for entering visual mode while navigating.
+There are a set of modified `Tab` keys on the left hand side for navigating
+between tabs and windows: `Ctrl-Tab`, `Alt-Tab` and `Win/Cmd-Tab`. In addition,
+for Windows 11, there are two macros bound to keys that will switch to previous
+and nextx virtual desks. The `Left Button` and `Right Button` keys serve as
+alternative mouse buttons when using an external trackball or trackpad.
+
+On the bottom left the `Func Layer` key switches the keyboard into the
+**function layer**.
+
+Finally, the `Capital-V` key is a Vim shortcut for entering visual mode while
+navigating.
 
 The thumb keys remain consistent: the `Space` and `Enter` thumb keys are on the
 inside and the `Base Layer` thumb key is on the outside left. As with the symbol
@@ -118,7 +123,7 @@ layer, all three of these keys return the keyboard to the **base layer**.
 
 ## Function Layer
 
-![Function Layer](https://i.imgur.com/deywwSj.png)
+![Function Layer](https://i.imgur.com/MhngS8s.png)
 
 Twelve function keys take up most of the left side. When any of the function
 keys are tapped the keyboard returns to the **base layer**.
@@ -130,14 +135,17 @@ of the right side. These keys are also sticky so they can be tapped repeatedly.
 
 The rest of the right side has a number of symbols that can be used in
 conjunction with the number layer to perform calculations. When any of these
-symbols are tapped the keyboard will return to the **number layer**. This is
-intended to simplify working with a calculator. The positions of the symbols
-mirror their positions in lower layers.
+symbols are tapped the keyboard will return to the **number and navigation
+layer**. This is intended to simplify working with a calculator. The positions
+of the symbols mirror their positions in lower layers.
 
 Again, the thumb keys remain consistent: the `Space` and `Enter` thumb keys are
 on the inside and the `Base Layer` thumb key is on the outside left. All three
-of these keys return the keyboard to the **base layer**. The `Num Layer` thumb
-key reappears on the far right to return the keyboard to the **number layer**.
+of these keys return the keyboard to the **base layer**.
+
+The `Sym Layer` thumb key reappears on the far right to return the keyboard to
+the **symbol layer**. This means that a double tap of the thumb key will return
+the keyboard to the **number and navigation layer**.
 
 ## Layer Navigation
 
