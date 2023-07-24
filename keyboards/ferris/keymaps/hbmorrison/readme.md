@@ -31,7 +31,7 @@ support open source projects and communities, folks.
 
 ## Base Layer
 
-![Base Layer](https://i.imgur.com/eHGUZWz.png)
+![Base Layer](https://i.imgur.com/rQCSlum.png)
 
 The base layer uses [Colemak DH](https://colemakmods.github.io/mod-dh/)
 [2020](https://forum.colemak.com/topic/2638-announcement-a-change-to-colemakdh/),
@@ -69,7 +69,7 @@ to pull up the 1Password quick access window.
 
 ## Symbol Layer
 
-![Symbol Layer](https://i.imgur.com/OJQcRku.png)
+![Symbol Layer](https://i.imgur.com/zaIR99n.png)
 
 The **symbol layer** is influenced by the way symbols are laid out on UK ISO
 keyboards. The symbols usually found above `2` to `8` are on the top row. The
@@ -97,7 +97,7 @@ keys will also return the keyboard to the **base layer** when tapped.
 
 ## Number and Navigation Layer
 
-![Number and Navigation Layer](https://i.imgur.com/Kn0wYQs.png)
+![Number and Navigation Layer](https://i.imgur.com/zfo0K7G.png)
 
 The top row is taken up by numbers as they appear on standard-sized keyboards.
 On the right side there are arrow keys arranged on the traditional Vim
@@ -123,7 +123,7 @@ layer, all three of these keys return the keyboard to the **base layer**.
 
 ## Function Layer
 
-![Function Layer](https://i.imgur.com/McjZsrq.png)
+![Function Layer](https://i.imgur.com/MhngS8s.png)
 
 Twelve function keys take up most of the left side. When any of the function
 keys are tapped the keyboard returns to the **base layer**.
