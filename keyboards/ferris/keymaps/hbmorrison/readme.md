@@ -56,10 +56,9 @@ presses:
 
 Home row modifiers are available on the following keys:
 
-* Hold `A` or `O` for `Shift`
-* Hold `R` or `I` for `Ctrl`
-* Hold `S` or `E` for `Alt`
-* Hold `T` or `N` for `Win/Cmd`
+* Hold `A` or `O` for `Win/Cmd`
+* Hold `R` or `I` for `Alt`
+* Hold `S` or `E` for `Ctrl`
 
 These keys can be held down alone or in combination. For example, on Windows you
 might hold down the `E` key - for `Alt` - then tap `F` followed by `S` to access
