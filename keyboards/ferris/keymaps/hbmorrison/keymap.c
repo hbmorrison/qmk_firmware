@@ -8,14 +8,12 @@ enum my_layers {
 };
 
 enum my_tap_dances {
-  TD_Q_ESC,
   TD_Z_CAPS,
   TD_X_CUT,
   TD_C_COPY,
   TD_V_PASTE,
   TD_F_PGDN,
-  TD_B_PGUP,
-  TD_1_ESC
+  TD_B_PGUP
 };
 
 enum my_keycodes {
@@ -25,7 +23,7 @@ enum my_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE_LAYER] = LAYOUT_split_3x5_2(
-      TD(TD_Q_ESC), KC_W, TD(TD_F_PGDN), KC_P, TD(TD_B_PGUP),
+      KC_Q, KC_W, TD(TD_F_PGDN), KC_P, TD(TD_B_PGUP),
           KC_J, KC_L, KC_U, KC_Y, KC_BSPC,
       LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), KC_T, KC_G,
           KC_M, KC_N, LCTL_T(KC_E), LALT_T(KC_I), LGUI_T(KC_O),
@@ -43,12 +41,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NUM_LAYER)
   ),
   [NUM_LAYER] = LAYOUT_split_3x5_2(
-      TD(TD_1_ESC), KC_2, KC_3, KC_4, KC_5,
+      KC_1, KC_2, KC_3, KC_4, KC_5,
           KC_6, KC_7, KC_8, KC_9, KC_0,
       LCTL(KC_TAB), LALT(KC_TAB), LGUI(KC_TAB), KC_BTN1, KC_BTN2,
-          KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_DEL,
+          KC_DEL,KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
       TO(FUNC_LAYER), KC_NO, M_DSKP, M_DSKN, LSFT(KC_V),
-          KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_INS,
+          KC_INS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
       TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
   ),
   [FUNC_LAYER] = LAYOUT_split_3x5_2(
@@ -58,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_VOLD, KC_BRID, KC_NO, KC_MINS, KC_EQL,
       KC_F9, KC_F10, KC_F11, KC_F12, KC_MPRV,
           KC_MUTE, KC_NO, KC_COMM, KC_DOT, KC_SLSH,
-      TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NUM_LAYER)
+      TO(BASE_LAYER), KC_SPC, KC_ENT, TO(SYM_LAYER)
   )
 };
 
@@ -70,8 +68,6 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 
 // Tap dance definitions
 tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Q, twice for Esc
-    [TD_Q_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),
     // Tap once for Z, twice for Caps Lock
     [TD_Z_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_Z, KC_CAPS),
     // Tap once for X, twice for Ctrl-X
@@ -84,8 +80,6 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_F_PGDN] = ACTION_TAP_DANCE_DOUBLE(KC_F, LCTL(KC_F)),
     // Tap once for B, twice for Ctrl-B
     [TD_B_PGUP] = ACTION_TAP_DANCE_DOUBLE(KC_B, LCTL(KC_B)),
-    // Tap once for 1, twice for Esc
-    [TD_1_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_ESC),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -114,17 +108,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // Respond to next desktop macro
   case M_DSKN:
     if (record->event.pressed) {
-      send_string(ss_down(x_lctl)ss_down(x_lgui));
-      send_string(ss_tap(x_right));
-      send_string(ss_up(x_lgui)ss_up(x_ltl));
+      SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LGUI));
+      SEND_STRING(SS_TAP(X_RIGHT));
+      SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LCTL));
     }
     break;
   // Respond to previous desktop macro
   case M_DSKP:
     if (record->event.pressed) {
-      send_string(ss_down(x_lctl)ss_down(x_lgui));
-      send_string(ss_tap(x_left));
-      send_string(ss_up(x_lgui)ss_up(x_ltl));
+      SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LGUI));
+      SEND_STRING(SS_TAP(X_LEFT));
+      SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LCTL));
     }
     break;
   }

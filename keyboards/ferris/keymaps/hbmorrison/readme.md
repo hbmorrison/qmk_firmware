@@ -47,7 +47,6 @@ return to the **base layer** immediately after a symbol key has been tapped.
 Tap dance is enabled and double taps on the following keys produce different key
 presses:
 
-* Double tapping the `Q` key produces `Esc`
 * Double tapping the `Z` key produces `Caps Lock`
 * Double tapping the `X` key produces `Ctrl-X` (i.e. cut)
 * Double tapping the `C` key produces `Ctrl-V` (i.e. copy)
@@ -104,7 +103,7 @@ The top row is taken up by numbers as they appear on standard-sized keyboards.
 On the right side there are arrow keys arranged on the traditional Vim
 navigation key locations (`HJKL` in QWERTY keyboards) with the `Home`, `Page
 Down`, `Page Up` and `End` keys below them. The `Delete` and `Insert` keys are
-on the far right.
+on the inside right.
 
 There are a set of modified `Tab` keys on the left hand side for navigating
 between tabs and windows: `Ctrl-Tab`, `Alt-Tab` and `Win/Cmd-Tab`. In addition,
@@ -142,8 +141,11 @@ of the symbols mirror their positions in lower layers.
 
 Again, the thumb keys remain consistent: the `Space` and `Enter` thumb keys are
 on the inside and the `Base Layer` thumb key is on the outside left. All three
-of these keys return the keyboard to the **base layer**. The `Num Layer` thumb
-key reappears on the far right to return the keyboard to the **number layer**.
+of these keys return the keyboard to the **base layer**.
+
+The `Sym Layer` thumb key reappears on the far right to return the keyboard to
+the **symbol layer**. This means that a double tap of the thumb key will return
+the keyboard to the **number and navigation layer**.
 
 ## Layer Navigation
 
