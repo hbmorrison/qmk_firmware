@@ -61,10 +61,10 @@ Home row modifiers are available on the following keys:
 * Hold `S` or `E` for `Ctrl`
 
 These keys can be held down alone or in combination. For example, on Windows you
-might hold down the `E` key - for `Alt` - then tap `F` followed by `S` to access
+might hold down the `I` key - for `Alt` - then tap `F` followed by `S` to access
 the File menu followed by the Save menu entry. Or, if you use 1Password, you
-might hold down `I` and `O` together - for `Ctrl` and `Shift` - then tap `Space`
-to pull up the 1Password quick access window.
+might hold down `E` - for `Ctrl`- then tap `Shift` followed by `Space` to pull
+up the 1Password quick access window.
 
 ## Symbol Layer
 
