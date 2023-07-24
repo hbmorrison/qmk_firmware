@@ -13,7 +13,9 @@ enum my_tap_dances {
   TD_C_COPY,
   TD_V_PASTE,
   TD_F_PGDN,
-  TD_B_PGUP
+  TD_B_PGUP,
+  TD_LBRC_GLB,
+  TD_RBRC_GRB
 };
 
 enum my_keycodes {
@@ -34,9 +36,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [SYM_LAYER] = LAYOUT_split_3x5_2(
       KC_ESC, KC_DQUO, LSFT(KC_3), KC_DLR, KC_PERC,
           KC_CIRC, KC_AMPR, KC_ASTR, KC_UNDS, KC_PLUS,
-      KC_TAB, KC_PIPE, KC_LBRC, KC_LCBR, KC_LPRN,
+      KC_TAB, KC_PIPE, TD(TD_LBRC_GLB), KC_LCBR, KC_LPRN,
           KC_COLN, KC_AT, KC_TILD, KC_MINS, KC_EQL,
-      TO(FUNC_LAYER), KC_NUBS, KC_RBRC, KC_RCBR, KC_RPRN,
+      TO(FUNC_LAYER), KC_NUBS, TD(TD_RBRC_GRB), KC_RCBR, KC_RPRN,
           KC_SCLN, KC_QUOT, KC_HASH, KC_GRV, KC_EXLM,
       TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NUM_LAYER)
   ),
@@ -80,6 +82,10 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_F_PGDN] = ACTION_TAP_DANCE_DOUBLE(KC_F, LCTL(KC_F)),
     // Tap once for B, twice for Ctrl-B
     [TD_B_PGUP] = ACTION_TAP_DANCE_DOUBLE(KC_B, LCTL(KC_B)),
+    // Tap once for [, twice for GUI-[ (ChromeOS prev desk)
+    [TD_LBRC_GLB] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, LGUI(KC_LBRC)),
+    // Tap once for ], twice for GUI-] (ChromeOS next desk)
+    [TD_RBRC_GRB] = ACTION_TAP_DANCE_DOUBLE(KC_RBRC, LGUI(KC_RBRC)),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
