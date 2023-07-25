@@ -56,16 +56,15 @@ presses:
 
 Home row modifiers are available on the following keys:
 
-* Hold `A` or `O` for `Shift`
-* Hold `R` or `I` for `Ctrl`
-* Hold `S` or `E` for `Alt`
-* Hold `T` or `N` for `Win/Cmd`
+* Hold `A` or `O` for `Win/Cmd`
+* Hold `R` or `I` for `Alt`
+* Hold `S` or `E` for `Ctrl`
 
 These keys can be held down alone or in combination. For example, on Windows you
-might hold down the `E` key - for `Alt` - then tap `F` followed by `S` to access
+might hold down the `I` key - for `Alt` - then tap `F` followed by `S` to access
 the File menu followed by the Save menu entry. Or, if you use 1Password, you
-might hold down `I` and `O` together - for `Ctrl` and `Shift` - then tap `Space`
-to pull up the 1Password quick access window.
+might hold down `E` - for `Ctrl`- then tap `Shift` followed by `Space` to pull
+up the 1Password quick access window.
 
 ## Symbol Layer
 
@@ -100,15 +99,15 @@ keys will also return the keyboard to the **base layer** when tapped.
 ![Number and Navigation Layer](https://i.imgur.com/zfo0K7G.png)
 
 The top row is taken up by numbers as they appear on standard-sized keyboards.
-On the right side there are arrow keys arranged on the traditional Vim
-navigation key locations (`HJKL` in QWERTY keyboards) with the `Home`, `Page
+On the right side there are arrow keys arranged in the traditional Vim
+navigation format (like `HJKL` in QWERTY keyboards) with the `Home`, `Page
 Down`, `Page Up` and `End` keys below them. The `Delete` and `Insert` keys are
 on the inside right.
 
 There are a set of modified `Tab` keys on the left hand side for navigating
 between tabs and windows: `Ctrl-Tab`, `Alt-Tab` and `Win/Cmd-Tab`. In addition,
 for Windows 11, there are two macros bound to keys that will switch to previous
-and nextx virtual desks. The `Left Button` and `Right Button` keys serve as
+and next virtual desks. The `Left Button` and `Right Button` keys serve as
 alternative mouse buttons when using an external trackball or trackpad.
 
 On the bottom left the `Func Layer` key switches the keyboard into the
