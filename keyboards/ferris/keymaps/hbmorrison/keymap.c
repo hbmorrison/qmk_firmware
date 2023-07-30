@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE_LAYER] = LAYOUT_split_3x5_2(
     TD(TD_Q_GRV), TD(TD_W_CTLW), KC_F, KC_P, KC_B, TD(TD_J_CTLJ), TD(TD_L_CTLL), KC_U, KC_Y, KC_BSPC,
     KC_A, LGUI_T(KC_R), LALT_T(KC_S), LCTL_T(KC_T), KC_G, KC_M, RCTL_T(KC_N), RALT_T(KC_E), RGUI_T(KC_I), KC_O,
-    TD(TD_Z_CAPS), TD(TD_X_CTLX), TD(TD_C_CTLC), KC_D, TD(TD_V_CTLV), TD(TD_K_CTLK), TD(TD_H_CTLH), KC_COMM, KC_DOT, KC_LEAD,
+    TD(TD_Z_CAPS), TD(TD_X_CTLX), TD(TD_C_CTLC), KC_D, TD(TD_V_CTLV), TD(TD_K_CTLK), TD(TD_H_CTLH), KC_COMM, KC_DOT, QK_LEAD,
     OSM(MOD_LSFT), KC_SPC, KC_ENT, OSL(SYM_LAYER)
   ),
   [SYM_LAYER] = LAYOUT_split_3x5_2(
@@ -125,98 +125,65 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-// Leader sequences.
-LEADER_EXTERNS();
-void matrix_scan_user(void) {
-  LEADER_DICTIONARY() {
-    leading = false;
-    leader_end();
+void leader_start_user(void) {
+  // Do something when the leader key is pressed
+}
 
-    // Vim regexp and substitute
-    SEQ_ONE_KEY(KC_R) { SEND_STRING(SS_TAP(X_ESC)":/"); }
-    SEQ_ONE_KEY(KC_S) { SEND_STRING(SS_TAP(X_ESC)":s/"); }
-
-    // Hyper-Z
-    SEQ_ONE_KEY(KC_Z) {
+void leader_end_user(void) {
+  // Vim regexp and substitution
+  if (leader_sequence_one_key(KC_R)) {
+      SEND_STRING(SS_TAP(X_ESC)":/");
+  } else if (leader_sequence_one_key(KC_S)) {
+      SEND_STRING(SS_TAP(X_ESC)":s/");
+  // AutoHotkey shortcuts to minimise, maximise and close windows
+  } else if (leader_sequence_one_key(KC_Z)) {
       SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
       SEND_STRING(SS_TAP(X_Z));
       SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-
-    // Hyper-X
-    SEQ_ONE_KEY(KC_X) {
+  } else if (leader_sequence_one_key(KC_X)) {
       SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
       SEND_STRING(SS_TAP(X_X));
       SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-    // Hyper-A
-    SEQ_ONE_KEY(KC_A) {
+  } else if (leader_sequence_one_key(KC_A)) {
       SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
       SEND_STRING(SS_TAP(X_A));
       SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-
-    // Hyper-1
-    SEQ_ONE_KEY(KC_Q) {
-      SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_1));
-      SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-
-    // Hyper-2
-    SEQ_ONE_KEY(KC_W) {
-      SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_2));
-      SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-
-    // Hyper-3
-    SEQ_ONE_KEY(KC_F) {
-      SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_3));
-      SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-
-    // Hyper-4
-    SEQ_ONE_KEY(KC_P) {
-      SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_4));
-      SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-
-    // Hyper-5
-    SEQ_ONE_KEY(KC_B) {
-      SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_5));
-      SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-    // Hyper-6
-    SEQ_ONE_KEY(KC_J) {
-      SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_6));
-      SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-
-    // Hyper-7
-    SEQ_ONE_KEY(KC_L) {
-      SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_7));
-      SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-
-    // Hyper-8
-    SEQ_ONE_KEY(KC_U) {
-      SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_8));
-      SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-
-    // Hyper-9
-    SEQ_ONE_KEY(KC_Y) {
-      SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_9));
-      SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-    }
-
+  // AutoHotkey shortcuts to open applications or bring them to the front
+  } else if (leader_sequence_one_key(KC_Q)) {
+    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
+    SEND_STRING(SS_TAP(X_1));
+    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
+  } else if (leader_sequence_one_key(KC_W)) {
+    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
+    SEND_STRING(SS_TAP(X_2));
+    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
+  } else if (leader_sequence_one_key(KC_F)) {
+    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
+    SEND_STRING(SS_TAP(X_3));
+    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
+  } else if (leader_sequence_one_key(KC_P)) {
+    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
+    SEND_STRING(SS_TAP(X_4));
+    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
+  } else if (leader_sequence_one_key(KC_B)) {
+    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
+    SEND_STRING(SS_TAP(X_5));
+    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
+  } else if (leader_sequence_one_key(KC_J)) {
+    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
+    SEND_STRING(SS_TAP(X_6));
+    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
+  } else if (leader_sequence_one_key(KC_L)) {
+    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
+    SEND_STRING(SS_TAP(X_7));
+    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
+  } else if (leader_sequence_one_key(KC_U)) {
+    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
+    SEND_STRING(SS_TAP(X_8));
+    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
+  } else if (leader_sequence_one_key(KC_Y)) {
+    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
+    SEND_STRING(SS_TAP(X_9));
+    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
   }
 }
