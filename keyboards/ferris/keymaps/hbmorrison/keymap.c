@@ -56,7 +56,7 @@ void slsh_lead_reset(tap_dance_state_t *state, void *user_data);
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE_LAYER] = LAYOUT_split_3x5_2(
-    TD(TD_Q_GRV), TD(TD_W_CTLW), KC_F, KC_P, KC_B, TD(TD_J_CTLJ), TD(TD_L_CTLL), KC_U, KC_Y, KC_BSPC,
+    KC_Q, TD(TD_W_CTLW), TD(TD_F_CTLF), KC_P, TD(TD_B_CTLB), TD(TD_J_CTLJ), TD(TD_L_CTLL), KC_U, KC_Y, KC_BSPC,
     KC_A, LGUI_T(KC_R), LALT_T(KC_S), LCTL_T(KC_T), KC_G, KC_M, RCTL_T(KC_N), RALT_T(KC_E), RGUI_T(KC_I), KC_O,
     TD(TD_Z_CAPS), TD(TD_X_CTLX), TD(TD_C_CTLC), KC_D, TD(TD_V_CTLV), TD(TD_K_CTLK), TD(TD_H_CTLH), KC_COMM, KC_DOT, TD(TD_SLSH_LEAD),
     OSM(MOD_LSFT), KC_SPC, KC_ENT, OSL(SYM_LAYER)
@@ -64,19 +64,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [SYM_LAYER] = LAYOUT_split_3x5_2(
     KC_EXLM, KC_DQUO, LSFT(KC_3), KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_UNDS, KC_PLUS,
     KC_ESC, KC_PIPE, TD(TD_LBRC_GLB), KC_LCBR, KC_LPRN, KC_COLN, KC_AT, KC_TILD, KC_MINS, KC_EQL,
-    TO(FUNC_LAYER), KC_NUBS, TD(TD_RBRC_GRB), KC_RCBR, KC_RPRN, KC_SCLN, KC_QUOT, KC_HASH, KC_QUES, KC_SLSH,
+    TO(FUNC_LAYER), KC_NUBS, TD(TD_RBRC_GRB), KC_RCBR, KC_RPRN, KC_SCLN, KC_QUOT, KC_HASH, KC_GRV, QK_LEAD,
     TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NUM_LAYER)
   ),
   [NUM_LAYER] = LAYOUT_split_3x5_2(
     KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0,
     KC_TAB, LCTL(KC_TAB), LALT(KC_TAB), KC_BTN1, KC_BTN2, KC_DEL, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
-    TO(FUNC_LAYER), KC_NO, M_DSKP, M_DSKN, LSFT(KC_V), KC_INS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+    TO(FUNC_LAYER), KC_NO, M_DSKP, M_DSKN, LSFT(KC_V), KC_INS, KC_NO, KC_PGDN, KC_PGUP, QK_LEAD,
     TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
   ),
   [FUNC_LAYER] = LAYOUT_split_3x5_2(
-    KC_F1, KC_F2, KC_F3, KC_F4, KC_MNXT, KC_VOLU, KC_BRIU, KC_ASTR, KC_NO, KC_PLUS,
-    KC_F5, KC_F6, KC_F7, KC_F8, KC_MPLY, KC_VOLD, KC_BRID, KC_NO, KC_MINS, KC_EQL,
-    KC_F9, KC_F10, KC_F11, KC_F12, KC_MPRV, KC_MUTE, KC_NO, KC_COMM, KC_DOT, KC_SLSH,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_MNXT, KC_VOLU, KC_BRIU, KC_ASTR, KC_NO, KC_PLUS,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_MPLY, KC_VOLD, KC_BRID, KC_NO, KC_MINS, KC_EQL,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_MPRV, KC_MUTE, KC_NO, KC_COMM, KC_DOT, KC_SLSH,
     TO(BASE_LAYER), KC_SPC, KC_ENT, TO(SYM_LAYER)
   )
 };
@@ -252,5 +252,29 @@ void leader_end_user(void) {
     SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
     SEND_STRING(SS_TAP(X_9));
     SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
+  } else if (leader_sequence_two_keys(KC_0, KC_1)) {
+    SEND_STRING(SS_TAP(X_F1));
+  } else if (leader_sequence_two_keys(KC_1, KC_0)) {
+    SEND_STRING(SS_TAP(X_F10));
+  } else if (leader_sequence_two_keys(KC_1, KC_1)) {
+    SEND_STRING(SS_TAP(X_F11));
+  } else if (leader_sequence_two_keys(KC_1, KC_2)) {
+    SEND_STRING(SS_TAP(X_F12));
+  } else if (leader_sequence_one_key(KC_2)) {
+    SEND_STRING(SS_TAP(X_F2));
+  } else if (leader_sequence_one_key(KC_3)) {
+    SEND_STRING(SS_TAP(X_F3));
+  } else if (leader_sequence_one_key(KC_4)) {
+    SEND_STRING(SS_TAP(X_F4));
+  } else if (leader_sequence_one_key(KC_5)) {
+    SEND_STRING(SS_TAP(X_F5));
+  } else if (leader_sequence_one_key(KC_6)) {
+    SEND_STRING(SS_TAP(X_F6));
+  } else if (leader_sequence_one_key(KC_7)) {
+    SEND_STRING(SS_TAP(X_F7));
+  } else if (leader_sequence_one_key(KC_8)) {
+    SEND_STRING(SS_TAP(X_F8));
+  } else if (leader_sequence_one_key(KC_9)) {
+    SEND_STRING(SS_TAP(X_F9));
   }
 }
