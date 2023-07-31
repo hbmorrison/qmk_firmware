@@ -3,12 +3,13 @@
 enum my_layers {
   BASE_LAYER,
   SYM_LAYER,
-  NUM_LAYER,
+  NAV_LAYER,
   FUNC_LAYER
 };
 
 enum my_tap_dances {
   TD_Q_GRV,
+  TD_A_TAB,
   TD_Z_CAPS,
   TD_X_CTLX,
   TD_C_CTLC,
@@ -16,10 +17,6 @@ enum my_tap_dances {
   TD_W_CTLW,
   TD_F_CTLF,
   TD_B_CTLB,
-  TD_H_CTLH,
-  TD_J_CTLJ,
-  TD_K_CTLK,
-  TD_L_CTLL,
   TD_LBRC_GLB,
   TD_RBRC_GRB,
   TD_SLSH_LEAD
@@ -56,21 +53,21 @@ void slsh_lead_reset(tap_dance_state_t *state, void *user_data);
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE_LAYER] = LAYOUT_split_3x5_2(
-    KC_Q, TD(TD_W_CTLW), TD(TD_F_CTLF), KC_P, TD(TD_B_CTLB), TD(TD_J_CTLJ), TD(TD_L_CTLL), KC_U, KC_Y, KC_BSPC,
-    KC_A, LGUI_T(KC_R), LALT_T(KC_S), LCTL_T(KC_T), KC_G, KC_M, RCTL_T(KC_N), RALT_T(KC_E), RGUI_T(KC_I), KC_O,
-    TD(TD_Z_CAPS), TD(TD_X_CTLX), TD(TD_C_CTLC), KC_D, TD(TD_V_CTLV), TD(TD_K_CTLK), TD(TD_H_CTLH), KC_COMM, KC_DOT, TD(TD_SLSH_LEAD),
+    TD(TD_Q_GRV), TD(TD_W_CTLW), TD(TD_F_CTLF), KC_P, TD(TD_B_CTLB), KC_J, KC_L, KC_U, KC_Y, KC_BSPC,
+    TD(TD_A_TAB), LGUI_T(KC_R), LALT_T(KC_S), LCTL_T(KC_T), KC_G, KC_M, RCTL_T(KC_N), RALT_T(KC_E), RGUI_T(KC_I), KC_O,
+    TD(TD_Z_CAPS), TD(TD_X_CTLX), TD(TD_C_CTLC), KC_D, TD(TD_V_CTLV), KC_K, KC_H, KC_COMM, KC_DOT, TD(TD_SLSH_LEAD),
     OSM(MOD_LSFT), KC_SPC, KC_ENT, OSL(SYM_LAYER)
   ),
   [SYM_LAYER] = LAYOUT_split_3x5_2(
-    KC_EXLM, KC_DQUO, LSFT(KC_3), KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_UNDS, KC_PLUS,
-    KC_ESC, KC_PIPE, TD(TD_LBRC_GLB), KC_LCBR, KC_LPRN, KC_COLN, KC_AT, KC_TILD, KC_MINS, KC_EQL,
-    TO(FUNC_LAYER), KC_NUBS, TD(TD_RBRC_GRB), KC_RCBR, KC_RPRN, KC_SCLN, KC_QUOT, KC_HASH, KC_GRV, QK_LEAD,
-    TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NUM_LAYER)
+    KC_EXLM, LSFT(KC_2), LSFT(KC_3), KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_UNDS, KC_PLUS,
+    KC_ESC, LSFT(KC_NUBS), TD(TD_LBRC_GLB), KC_LCBR, KC_LPRN, KC_COLN, LSFT(KC_QUOT), LSFT(KC_BSLS), KC_MINS, KC_EQL,
+    TO(FUNC_LAYER), KC_NUBS, TD(TD_RBRC_GRB), KC_RCBR, KC_RPRN, KC_SCLN, KC_QUOT, KC_BSLS, LSFT(KC_DOT), KC_QUES,
+    TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NAV_LAYER)
   ),
-  [NUM_LAYER] = LAYOUT_split_3x5_2(
+  [NAV_LAYER] = LAYOUT_split_3x5_2(
     KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0,
     KC_TAB, LCTL(KC_TAB), LALT(KC_TAB), KC_BTN1, KC_BTN2, KC_DEL, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
-    TO(FUNC_LAYER), KC_NO, M_DSKP, M_DSKN, LSFT(KC_V), KC_INS, KC_NO, KC_PGDN, KC_PGUP, QK_LEAD,
+    QK_LEAD, TO(FUNC_LAYER), M_DSKP, M_DSKN, LSFT(KC_V), KC_INS, KC_NO, KC_PGDN, KC_PGUP, QK_LEAD,
     TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
   ),
   [FUNC_LAYER] = LAYOUT_split_3x5_2(
@@ -87,15 +84,12 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_X_CTLX] = ACTION_TAP_DANCE_DOUBLE(KC_X, LCTL(KC_X)),
   [TD_C_CTLC] = ACTION_TAP_DANCE_DOUBLE(KC_C, LCTL(KC_C)),
   [TD_V_CTLV] = ACTION_TAP_DANCE_DOUBLE(KC_V, LCTL(KC_V)),
-  // Caps lock.
-  [TD_Z_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_Z, KC_CAPS),
-  // Grave on Q key.
+  // GRAVE on Q key.
   [TD_Q_GRV] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_GRV),
-  // Vim navigation keys with ctrl key pressed on double tap.
-  [TD_H_CTLH] = ACTION_TAP_DANCE_DOUBLE(KC_H, LCTL(KC_H)),
-  [TD_J_CTLJ] = ACTION_TAP_DANCE_DOUBLE(KC_J, LCTL(KC_J)),
-  [TD_K_CTLK] = ACTION_TAP_DANCE_DOUBLE(KC_K, LCTL(KC_K)),
-  [TD_L_CTLL] = ACTION_TAP_DANCE_DOUBLE(KC_L, LCTL(KC_L)),
+  // Tab on A key.
+  [TD_A_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_A, KC_TAB),
+  // Caps lock on Z key.
+  [TD_Z_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_Z, KC_CAPS),
   // Vim split commands.
   [TD_W_CTLW] = ACTION_TAP_DANCE_DOUBLE(KC_W, LCTL(KC_W)),
   // Vim page up and down.
@@ -128,7 +122,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case KC_SLSH:
     if (record->event.pressed) {
       if (IS_LAYER_ON(FUNC_LAYER)) {
-        layer_move(NUM_LAYER);
+        layer_move(NAV_LAYER);
       }
     }
     break;
@@ -152,21 +146,42 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    // Increase the tapping term for the homerow mods.
+    case LGUI_T(KC_R):
+    case LALT_T(KC_S):
+    case LCTL_T(KC_T):
+    case RCTL_T(KC_N):
+    case RALT_T(KC_E):
+    case RGUI_T(KC_I):
+      return TAPPING_TERM + 1000;
+    // Set the tapping term for the paste key differently.
+    case LCTL(KC_V):
+      return TAPPING_TERM_PASTE;
+    // Set the tapping term for the leader key differently.
+    case TD(TD_SLSH_LEAD):
+      return TAPPING_TERM_LEADER;
+    default:
+      return TAPPING_TERM;
+  }
+}
+
 td_leaderstate_t td_get_leader_taps(tap_dance_state_t *state) {
   if (state->count == 1) {
     // Interrupted means another key has been pressed within the tapping term
-    // and not pressed means the leader key is no longer pressed, so return a
-    // single tap.
+    // and state not being pressed means the leader key is no longer pressed, so
+    // return a single tap either way.
     if (state->interrupted || !state->pressed) return TD_SINGLE_TAP;
   } else if (state->count == 2) {
     // Normally if the double tap has been interrupted we interpret that as fast
     // typing but in the case of the leader key we actually interpret that as a
     // leader action, so the opposite as true and we return the tap dance
-    // action.
+    // action: a leader tap.
     if (state->interrupted) return TD_LEADER_TAP;
     // And if the tapping term has expired without another key being pressed to
-    // interrupt, in the case of the leader key specifically, we interpret this
-    // as a "timeout" of sorts and want to issue the two keypresses instead of
+    // interrupt, we interpret this as a "timeout" of sorts - in this case of
+    // the leader key specifically - and we issue the two keypresses instead of
     // the tapdance action.
     else if (!state->pressed) return TD_KEYPRESSES;
   }
@@ -177,8 +192,7 @@ void slsh_lead_finished(tap_dance_state_t *state, void *user_data) {
   slsh_lead.state = td_get_leader_taps(state);
   switch (slsh_lead.state) {
     case TD_SINGLE_TAP: register_code(KC_SLSH); break;
-    case TD_LEADER_TAP: leader_start(); break;
-    case TD_KEYPRESSES: leader_end(); tap_code(KC_SLSH); register_code(KC_SLSH); break;
+    case TD_KEYPRESSES: tap_code(KC_SLSH); register_code(KC_SLSH); break;
     default: break;
   }
 }
@@ -186,6 +200,7 @@ void slsh_lead_finished(tap_dance_state_t *state, void *user_data) {
 void slsh_lead_reset(tap_dance_state_t *state, void *user_data) {
   switch (slsh_lead.state) {
     case TD_SINGLE_TAP: unregister_code(KC_SLSH); break;
+    case TD_LEADER_TAP: leader_start(); break;
     case TD_KEYPRESSES: unregister_code(KC_SLSH); break;
     default: break;
   }
@@ -197,60 +212,45 @@ void leader_start_user(void) {
 }
 
 void leader_end_user(void) {
-  // Vim regexp and substitution.
-  if (leader_sequence_one_key(KC_R)) {
-      SEND_STRING(SS_TAP(X_ESC)":/");
-  } else if (leader_sequence_one_key(KC_S)) {
-      SEND_STRING(SS_TAP(X_ESC)":s/");
   // AutoHotkey shortcuts to minimise, maximise and close windows.
-  } else if (leader_sequence_one_key(KC_Z)) {
+  if (leader_sequence_one_key(KC_M)) {
       SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_Z));
+      SEND_STRING(SS_TAP(X_M));
       SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-  } else if (leader_sequence_one_key(KC_X)) {
+  } else if (leader_sequence_one_key(KC_G)) {
       SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_X));
+      SEND_STRING(SS_TAP(X_G));
       SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-  } else if (leader_sequence_one_key(KC_A)) {
+  } else if (leader_sequence_one_key(KC_BSPC)) {
       SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-      SEND_STRING(SS_TAP(X_A));
+      SEND_STRING(SS_TAP(X_BSPC));
       SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
   // AutoHotkey shortcuts to open applications or bring them to the front.
-  } else if (leader_sequence_one_key(KC_Q)) {
+  } else if (leader_sequence_one_key(KC_R)) {
     SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
     SEND_STRING(SS_TAP(X_1));
     SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-  } else if (leader_sequence_one_key(KC_W)) {
+  } else if (leader_sequence_one_key(KC_S)) {
     SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
     SEND_STRING(SS_TAP(X_2));
     SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-  } else if (leader_sequence_one_key(KC_F)) {
+    reset_tap_dance(&tap_dance_actions[TD_F_CTLF].state);
+  } else if (leader_sequence_one_key(KC_T)) {
     SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
     SEND_STRING(SS_TAP(X_3));
     SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-  } else if (leader_sequence_one_key(KC_P)) {
+  } else if (leader_sequence_one_key(KC_N)) {
     SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
     SEND_STRING(SS_TAP(X_4));
     SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-  } else if (leader_sequence_one_key(KC_B)) {
+    reset_tap_dance(&tap_dance_actions[TD_B_CTLB].state);
+  } else if (leader_sequence_one_key(KC_E)) {
     SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
     SEND_STRING(SS_TAP(X_5));
     SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-  } else if (leader_sequence_one_key(KC_J)) {
+  } else if (leader_sequence_one_key(KC_I)) {
     SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
     SEND_STRING(SS_TAP(X_6));
-    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-  } else if (leader_sequence_one_key(KC_L)) {
-    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-    SEND_STRING(SS_TAP(X_7));
-    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-  } else if (leader_sequence_one_key(KC_U)) {
-    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-    SEND_STRING(SS_TAP(X_8));
-    SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-  } else if (leader_sequence_one_key(KC_Y)) {
-    SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
-    SEND_STRING(SS_TAP(X_9));
     SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
   } else if (leader_sequence_two_keys(KC_0, KC_1)) {
     SEND_STRING(SS_TAP(X_F1));
