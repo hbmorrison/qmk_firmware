@@ -21,8 +21,7 @@ enum my_tap_dances {
   TD_K_CTLK,
   TD_L_CTLL,
   TD_LBRC_GLB,
-  TD_RBRC_GRB,
-  TD_SLSH_LEAD
+  TD_RBRC_GRB
 };
 
 enum my_keycodes {
@@ -30,35 +29,11 @@ enum my_keycodes {
     M_DSKP
 };
 
-typedef enum {
-  TD_NONE,
-  TD_UNKNOWN,
-  TD_SINGLE_TAP,
-  TD_LEADER_TAP,
-  TD_KEYPRESSES
-} td_leaderstate_t;
-
-typedef struct {
-  bool is_press_action;
-  td_leaderstate_t state;
-} td_doubletap_t;
-
-// Create instance of 'td_doubletap_t' for the leader tap dance.
-static td_doubletap_t slsh_lead = {
-  .is_press_action = true,
-  .state = TD_NONE
-};
-
-// For the leader tap dance, put here so they can be used in any keymap.
-td_leaderstate_t td_get_leader_taps(tap_dance_state_t *state);
-void slsh_lead_finished(tap_dance_state_t *state, void *user_data);
-void slsh_lead_reset(tap_dance_state_t *state, void *user_data);
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE_LAYER] = LAYOUT_split_3x5_2(
     TD(TD_Q_GRV), TD(TD_W_CTLW), KC_F, KC_P, KC_B, TD(TD_J_CTLJ), TD(TD_L_CTLL), KC_U, KC_Y, KC_BSPC,
     KC_A, LGUI_T(KC_R), LALT_T(KC_S), LCTL_T(KC_T), KC_G, KC_M, RCTL_T(KC_N), RALT_T(KC_E), RGUI_T(KC_I), KC_O,
-    TD(TD_Z_CAPS), TD(TD_X_CTLX), TD(TD_C_CTLC), KC_D, TD(TD_V_CTLV), TD(TD_K_CTLK), TD(TD_H_CTLH), KC_COMM, KC_DOT, TD(TD_SLSH_LEAD),
+    TD(TD_Z_CAPS), TD(TD_X_CTLX), TD(TD_C_CTLC), KC_D, TD(TD_V_CTLV), TD(TD_K_CTLK), TD(TD_H_CTLH), KC_COMM, KC_DOT, QK_LEAD,
     OSM(MOD_LSFT), KC_SPC, KC_ENT, OSL(SYM_LAYER)
   ),
   [SYM_LAYER] = LAYOUT_split_3x5_2(
@@ -81,37 +56,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
-// Tap dance definitions.
+// Tap dance definitions
 tap_dance_action_t tap_dance_actions[] = {
-  // Cut, copy and paste.
+  // Cut, copy and paste
   [TD_X_CTLX] = ACTION_TAP_DANCE_DOUBLE(KC_X, LCTL(KC_X)),
   [TD_C_CTLC] = ACTION_TAP_DANCE_DOUBLE(KC_C, LCTL(KC_C)),
   [TD_V_CTLV] = ACTION_TAP_DANCE_DOUBLE(KC_V, LCTL(KC_V)),
-  // Caps lock.
+  // Caps lock
   [TD_Z_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_Z, KC_CAPS),
-  // Grave on Q key.
+  // Grave on Q key
   [TD_Q_GRV] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_GRV),
-  // Vim navigation keys with ctrl key pressed on double tap.
+  // Vim navigation keys with ctrl key pressed on double tap
   [TD_H_CTLH] = ACTION_TAP_DANCE_DOUBLE(KC_H, LCTL(KC_H)),
   [TD_J_CTLJ] = ACTION_TAP_DANCE_DOUBLE(KC_J, LCTL(KC_J)),
   [TD_K_CTLK] = ACTION_TAP_DANCE_DOUBLE(KC_K, LCTL(KC_K)),
   [TD_L_CTLL] = ACTION_TAP_DANCE_DOUBLE(KC_L, LCTL(KC_L)),
-  // Vim split commands.
+  // Vim split commands
   [TD_W_CTLW] = ACTION_TAP_DANCE_DOUBLE(KC_W, LCTL(KC_W)),
-  // Vim page up and down.
+  // Vim page up and down
   [TD_F_CTLF] = ACTION_TAP_DANCE_DOUBLE(KC_F, LCTL(KC_F)),
   [TD_B_CTLB] = ACTION_TAP_DANCE_DOUBLE(KC_B, LCTL(KC_B)),
-  // Tap once for [, twice for Search-[ (ChromeOS prev desk).
+  // Tap once for [, twice for Search-[ (ChromeOS prev desk)
   [TD_LBRC_GLB] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, LGUI(KC_LBRC)),
-  // Tap once for ], twice for Search-] (ChromeOS next desk).
-  [TD_RBRC_GRB] = ACTION_TAP_DANCE_DOUBLE(KC_RBRC, LGUI(KC_RBRC)),
-  // Tap once for /, twice for leader key.
-  [TD_SLSH_LEAD] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, slsh_lead_finished, slsh_lead_reset),
+  // Tap once for ], twice for Search-] (ChromeOS next desk)
+  [TD_RBRC_GRB] = ACTION_TAP_DANCE_DOUBLE(KC_RBRC, LGUI(KC_RBRC))
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-  // Return to the base later after fn keys, space or enter have been pressed.
+  // Return to the base later after fn keys, space or enter have been pressed
   case KC_F1 ... KC_F12:
   case KC_SPC:
   case KC_ENT:
@@ -119,7 +92,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       layer_move(BASE_LAYER);
     }
     break;
-  // Return to num layer if symbol keys in the func layer have been pressed.
+  // Return to num layer if symbol keys in the func layer have been pressed
   case KC_ASTR:
   case KC_PLUS:
   case KC_MINS:
@@ -132,7 +105,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
     }
     break;
-  // Respond to next desktop macro.
+  // Respond to next desktop macro
   case M_DSKN:
     if (record->event.pressed) {
       SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LGUI));
@@ -140,7 +113,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LCTL));
     }
     break;
-  // Respond to previous desktop macro.
+  // Respond to previous desktop macro
   case M_DSKP:
     if (record->event.pressed) {
       SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LGUI));
@@ -152,57 +125,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-td_leaderstate_t td_get_leader_taps(tap_dance_state_t *state) {
-  if (state->count == 1) {
-    // Interrupted means another key has been pressed within the tapping term
-    // and not pressed means the leader key is no longer pressed, so return a
-    // single tap.
-    if (state->interrupted || !state->pressed) return TD_SINGLE_TAP;
-  } else if (state->count == 2) {
-    // Normally if the double tap has been interrupted we interpret that as fast
-    // typing but in the case of the leader key we actually interpret that as a
-    // leader action, so the opposite as true and we return the tap dance
-    // action.
-    if (state->interrupted) return TD_LEADER_TAP;
-    // And if the tapping term has expired without another key being pressed to
-    // interrupt, in the case of the leader key specifically, we interpret this
-    // as a "timeout" of sorts and want to issue the two keypresses instead of
-    // the tapdance action.
-    else if (!state->pressed) return TD_KEYPRESSES;
-  }
-  return TD_UNKNOWN;
-}
-
-void slsh_lead_finished(tap_dance_state_t *state, void *user_data) {
-  slsh_lead.state = td_get_leader_taps(state);
-  switch (slsh_lead.state) {
-    case TD_SINGLE_TAP: register_code(KC_SLSH); break;
-    case TD_LEADER_TAP: leader_start(); break;
-    case TD_KEYPRESSES: leader_end(); tap_code(KC_SLSH); register_code(KC_SLSH); break;
-    default: break;
-  }
-}
-
-void slsh_lead_reset(tap_dance_state_t *state, void *user_data) {
-  switch (slsh_lead.state) {
-    case TD_SINGLE_TAP: unregister_code(KC_SLSH); break;
-    case TD_KEYPRESSES: unregister_code(KC_SLSH); break;
-    default: break;
-  }
-  slsh_lead.state = TD_NONE;
-}
-
 void leader_start_user(void) {
-  // Do something when the leader key is pressed.
+  // Do something when the leader key is pressed
 }
 
 void leader_end_user(void) {
-  // Vim regexp and substitution.
+  // Vim regexp and substitution
   if (leader_sequence_one_key(KC_R)) {
       SEND_STRING(SS_TAP(X_ESC)":/");
   } else if (leader_sequence_one_key(KC_S)) {
       SEND_STRING(SS_TAP(X_ESC)":s/");
-  // AutoHotkey shortcuts to minimise, maximise and close windows.
+  // AutoHotkey shortcuts to minimise, maximise and close windows
   } else if (leader_sequence_one_key(KC_Z)) {
       SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
       SEND_STRING(SS_TAP(X_Z));
@@ -215,7 +148,7 @@ void leader_end_user(void) {
       SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
       SEND_STRING(SS_TAP(X_A));
       SEND_STRING(SS_UP(X_LGUI)SS_UP(X_LALT)SS_UP(X_LCTL)SS_UP(X_LSFT));
-  // AutoHotkey shortcuts to open applications or bring them to the front.
+  // AutoHotkey shortcuts to open applications or bring them to the front
   } else if (leader_sequence_one_key(KC_Q)) {
     SEND_STRING(SS_DOWN(X_LSFT)SS_DOWN(X_LCTL)SS_DOWN(X_LALT)SS_DOWN(X_LGUI));
     SEND_STRING(SS_TAP(X_1));
