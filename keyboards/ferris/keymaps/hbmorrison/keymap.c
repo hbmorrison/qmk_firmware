@@ -13,6 +13,7 @@ enum my_keycodes {
     M_DSKP,
     M_ESCQ,
     M_ESCW,
+    M_ESCV,
     M_EQLR
 };
 
@@ -30,15 +31,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NAV_LAYER)
   ),
   [SCUT_LAYER] = LAYOUT_split_3x5_2(
-    M_ESCQ, M_ESCW, LCTL(KC_F), LSFT(LCTL(KC_SPC)), LCTL(KC_B), KC_WH_D, KC_NO, KC_NO, KC_NO, KC_DEL,
-    KC_TAB, HYPR(KC_1), HYPR(KC_2), HYPR(KC_3), HYPR(KC_G), HYPR(KC_M), HYPR(KC_4), HYPR(KC_5), HYPR(KC_6), KC_NO,
-    KC_CAPS, LCTL(KC_X), LCTL(KC_C), LSFT(LCTL(KC_C)), LCTL(KC_V), KC_WH_U, KC_NO, KC_NO, M_EQLR, KC_SLSH,
+    M_ESCQ, M_ESCW, LCTL(KC_F), LSFT(LCTL(KC_SPC)), LCTL(KC_B), KC_NO, KC_NO, KC_NO, KC_NO, KC_DEL,
+    KC_TAB, HYPR(KC_1), HYPR(KC_2), HYPR(KC_3), HYPR(KC_G), HYPR(KC_M), HYPR(KC_4), HYPR(KC_5), HYPR(KC_6), KC_INS,
+    KC_CAPS, LCTL(KC_X), LCTL(KC_C), LSFT(LCTL(KC_C)), LCTL(KC_V), KC_NO, KC_NO, KC_NO, M_EQLR, KC_SLSH,
     TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
   ),
   [NAV_LAYER] = LAYOUT_split_3x5_2(
     KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0,
-    KC_TAB, LCTL(KC_TAB), LALT(KC_TAB), KC_BTN1, KC_BTN2, KC_DEL, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
-    TO(FUNC_LAYER), KC_NO, M_DSKP, M_DSKN, LSFT(KC_V), KC_INS, KC_NO, KC_PGDN, KC_PGUP, KC_END,
+    KC_TAB, LCTL(KC_TAB), LALT(KC_TAB), KC_BTN1, KC_BTN2, KC_WH_U, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
+    TO(FUNC_LAYER), KC_NO, M_DSKP, M_DSKN, M_ESCV, KC_WH_D, KC_NO, KC_PGDN, KC_PGUP, KC_END,
     TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
   ),
   [FUNC_LAYER] = LAYOUT_split_3x5_2(
@@ -72,6 +73,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_move(BASE_LAYER);
       }
       break;
+    case M_ESCV:
+      if (record->event.pressed) {
+        SEND_STRING(SS_TAP(X_ESC));
+        SEND_STRING(SS_DOWN(X_LSFT)SS_TAP(X_V)SS_UP(X_LSFT));
+      }
+      break;
     // Respond to next desktop macro.
     case M_DSKN:
       if (record->event.pressed) {
@@ -95,7 +102,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     // Return to the base layer after a function key is pressed.
-    case KC_F1 ... KC_F24:
+    case KC_F1 ... KC_F12:
       if (!record->event.pressed) { layer_move(BASE_LAYER); }
       break;
     // Return to the base later after space or enter have been pressed.
