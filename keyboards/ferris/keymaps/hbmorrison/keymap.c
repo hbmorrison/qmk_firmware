@@ -30,9 +30,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TO(BASE_LAYER), KC_SPC, KC_ENT, TO(NAV_LAYER)
   ),
   [SCUT_LAYER] = LAYOUT_split_3x5_2(
-    M_ESCQ, M_ESCW, LCTL(KC_F), KC_NO, LCTL(KC_B), KC_WH_D, KC_NO, KC_NO, KC_NO, KC_DEL,
+    M_ESCQ, M_ESCW, LCTL(KC_F), LSFT(LCTL(KC_SPC)), LCTL(KC_B), KC_WH_D, KC_NO, KC_NO, KC_NO, KC_DEL,
     KC_TAB, HYPR(KC_1), HYPR(KC_2), HYPR(KC_3), HYPR(KC_G), HYPR(KC_M), HYPR(KC_4), HYPR(KC_5), HYPR(KC_6), KC_NO,
-    KC_CAPS, LCTL(KC_X), LCTL(KC_C), KC_NO, LCTL(KC_V), KC_WH_U, KC_NO, KC_NO, M_EQLR, KC_SLSH,
+    KC_CAPS, LCTL(KC_X), LCTL(KC_C), LSFT(LCTL(KC_C)), LCTL(KC_V), KC_WH_U, KC_NO, KC_NO, M_EQLR, KC_SLSH,
     TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
   ),
   [NAV_LAYER] = LAYOUT_split_3x5_2(
@@ -138,6 +138,8 @@ void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
     case LCTL(KC_V):
     case LCTL(KC_F):
     case LCTL(KC_B):
+    case LSFT(LCTL(KC_SPC)):
+    case LSFT(LCTL(KC_C)):
     case HYPR(KC_1):
     case HYPR(KC_2):
     case HYPR(KC_3):
