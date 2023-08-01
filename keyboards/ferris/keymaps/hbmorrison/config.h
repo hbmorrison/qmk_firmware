@@ -43,9 +43,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PERMISSIVE_HOLD
 #define TAPPING_TERM_PER_KEY
 
-// Tapping term for the paste key
-#define TAPPING_TERM_PASTE 160
-
 // Tapping term for the homerow mod keys
 #define TAPPING_TERM_MODS 1200
 

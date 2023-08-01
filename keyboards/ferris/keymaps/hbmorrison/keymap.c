@@ -25,7 +25,7 @@ static bool m_altt_pressed = false;
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE_LAYER] = LAYOUT_split_3x5_2(
     KC_Q, KC_W, KC_F, KC_P, KC_B, KC_J, KC_L, KC_U, KC_Y, KC_BSPC,
-    KC_A, LGUI_T(KC_R), LALT_T(KC_S), LCTL_T(KC_T), KC_G, KC_M, RCTL_T(KC_N), RALT_T(KC_E), RGUI_T(KC_I), KC_O,
+    LSFT_T(KC_A), LCTL_T(KC_R), LALT_T(KC_S), LGUI_T(KC_T), KC_G, KC_M, RGUI_T(KC_N), RALT_T(KC_E), RCTL_T(KC_I), RSFT_T(KC_O),
     KC_Z, KC_X, KC_C, KC_D, KC_V, KC_K, KC_H, KC_COMM, KC_DOT, OSL(SCUT_LAYER),
     OSM(MOD_LSFT), KC_SPC, KC_ENT, OSL(SYM_LAYER)
   ),
@@ -44,13 +44,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NAV_LAYER] = LAYOUT_split_3x5_2(
     KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0,
     KC_TAB, LCTL(KC_TAB), M_ALTT, KC_BTN1, KC_BTN2, KC_WH_U, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
-    TO(FUNC_LAYER), LCTL(KC_W), M_DSKP, M_DSKN, M_ESCV, KC_WH_D, KC_NO, KC_PGDN, KC_PGUP, KC_END,
+    TO(FUNC_LAYER), LCTL(KC_F4), M_DSKP, M_DSKN, M_ESCV, KC_WH_D, KC_NO, KC_PGDN, KC_PGUP, KC_END,
     TO(BASE_LAYER), KC_SPC, KC_ENT, KC_NO
   ),
   [FUNC_LAYER] = LAYOUT_split_3x5_2(
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_MNXT, KC_VOLU, KC_BRIU, KC_ASTR, KC_NO, KC_PLUS,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_MPLY, KC_VOLD, KC_BRID, KC_NO, KC_MINS, KC_EQL,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_MPRV, KC_MUTE, KC_NO, KC_COMM, KC_DOT, KC_SLSH,
+    KC_F1, KC_F2, KC_F3, KC_F4, KC_MNXT, KC_VOLU, KC_BRIU, KC_ASTR, KC_NO, KC_PLUS,
+    KC_F5, KC_F6, KC_F7, KC_F8, KC_MPLY, KC_VOLD, KC_BRID, KC_NO, KC_MINS, KC_EQL,
+    KC_F9, KC_F10, KC_F11, KC_F12, KC_MPRV, KC_MUTE, KC_NO, KC_COMM, KC_DOT, KC_SLSH,
     TO(BASE_LAYER), KC_SPC, KC_ENT, TO(SYM_LAYER)
   )
 };
@@ -148,16 +148,15 @@ void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     // Set the tapping term for the homerow mods.
-    case LGUI_T(KC_R):
+    case LSFT_T(KC_A):
+    case LCTL_T(KC_R):
     case LALT_T(KC_S):
-    case LCTL_T(KC_T):
-    case RCTL_T(KC_N):
+    case LGUI_T(KC_T):
+    case RGUI_T(KC_N):
     case RALT_T(KC_E):
-    case RGUI_T(KC_I):
+    case RCTL_T(KC_I):
+    case RSFT_T(KC_O):
       return TAPPING_TERM_MODS;
-    // Set the tapping term for the paste key differently.
-    case LCTL(KC_V):
-      return TAPPING_TERM_PASTE;
     default:
       return TAPPING_TERM;
   }
