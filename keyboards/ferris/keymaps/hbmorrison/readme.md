@@ -11,11 +11,11 @@ is no chording required and I try to use tap dancing as an alternative for
 common situations where chording would otherwise be called for.
 
 In practice, a single tap of the layer key gets to the symbol layer and a double
-tap of the same layer key gets to the number and navigation layer. Most of the
-time you will be tapping this layer key, hitting a symbol then carrying on in
-the base layer. Also, wherever you are, tapping the space or enter key will
-bring you back to the base layer. The idea is that you should not have to think
-too much about which layer you are in most of the time.
+tap of the same layer key gets to the navigation layer. Most of the time you
+will be tapping this layer key, hitting a symbol then carrying on in the base
+layer. Also, wherever you are, tapping the space or enter key will bring you
+back to the base layer. The idea is that you should not have to think too much
+about which layer you are in most of the time.
 
 ### Credit
 
@@ -31,7 +31,7 @@ support open source projects and communities, folks.
 
 ## Base Layer
 
-![Base Layer](https://i.imgur.com/J2UlPS4.png)
+![Base Layer](https://i.imgur.com/qJhu5fu.png)
 
 The base layer uses [Colemak DH](https://colemakmods.github.io/mod-dh/)
 [2020](https://forum.colemak.com/topic/2638-announcement-a-change-to-colemakdh/),
@@ -63,41 +63,38 @@ the File menu followed by the Save menu entry. Or, if you use 1Password, you
 might hold down `I` and `O` - for `Ctrl` and `Shift` - followed by `Space` to
 pull up the 1Password quick access window.
 
-## Shortcuts Layer
-
-![Shortcuts Layer](https://i.imgur.com/sOSF0vU.png)
-
 ## Symbol Layer
 
-![Symbol Layer](https://i.imgur.com/72YZLxs.png)
+![Symbol Layer](https://i.imgur.com/UqK0lqv.png)
 
 The **symbol layer** is influenced by the way symbols are laid out on UK ISO
-keyboards. The symbols usually found above `2` to `8` are on the top row. The
+keyboards. The symbols usually found above `1` to `8` are on the top row. The
 `Minus` / `Underscore` and `Equals` / `Plus` keys are on the right side as pairs
 of separate keys. The `Esc` and `Tab` keys are on the far left side.
 
 In the middle there are more pairs of keys that are usually found to the right
 of the middle row: `Hash` / `Tilde` , `Quote` / `At`  and `Semicolon` / `Colon`.
-The `Exclamation Mark` key is on the bottom right, which would have appeared in
-the `1` position if there was space, but which is now placed on the same key as
-the `Slash/Question mark` key in the base layer as a compromise. The `Grave` key
-appears beside it, also in a compromise position.
+The `Grave` symbol would have appeared at the top left of the keyboard if there
+was space, but is placed towards the bottom right as a compromise.
 
 Most of the left side is taken up by pairs of braces and brackets. The
 `Backslash` / `Pipe` key pair is on the outside of the left side and the `Func
 Layer` key at the bottom left switches the keyboard into the **function layer**.
+The `Scut Layer` key on the bottom right switches the keyboard into the
+**shortcut layer** for a single key press and returns the keyboard to the **base
+layer** after a shortcut key has been pressed.
 
-The `Nav Layer` thumb key on the outside right switches the keyboard into the
-**number and navigation layer**. The `Space` and `Enter` thumb keys remain on
-the inside left and right, and the outside left thumb key becomes `Base Layer`,
-which returns the keyboard to the **base layer**.
+On the thumb keys, the `Nav Layer` thumb key on the outside right switches the
+keyboard into the **navigation layer**. The `Space` and `Enter` thumb keys
+remain on the inside left and right, and the outside left thumb key becomes
+`Base Layer`, which returns the keyboard to the **base layer**.
 
 As well as producing their respective key presses, the `Space` and `Enter` thumb
 keys will also return the keyboard to the **base layer** when tapped.
 
 ## Navigation Layer
 
-![Navigation Layer](https://i.imgur.com/CfNIpuh.png)
+![Navigation Layer](https://i.imgur.com/mZIgRa2.png)
 
 The top row is taken up by numbers as they appear on standard-sized keyboards.
 On the right side there are arrow keys arranged in the traditional Vim
@@ -114,7 +111,9 @@ macros bound to keys that will switch to previous and next virtual desks. The
 using an external trackball or trackpad.
 
 On the bottom left the `Func Layer` key switches the keyboard into the
-**function layer**.
+**function layer**. The `Scut Layer` key on the bottom right switches the
+keyboard into the **shortcut layer** for a single key press and returns the
+keyboard to the **base layer** after a shortcut key has been pressed.
 
 Finally, the `Capital-V` key is a Vim shortcut for entering visual mode while
 navigating.
@@ -125,7 +124,7 @@ layer, all three of these keys return the keyboard to the **base layer**.
 
 ## Function Layer
 
-![Function Layer](https://i.imgur.com/Qp5Gbsm.png)
+![Function Layer](https://i.imgur.com/RN0ej4P.png)
 
 Twelve function keys take up most of the left side. When any of the function
 keys are tapped the keyboard returns to the **base layer**.
@@ -137,9 +136,9 @@ of the right side. These keys are also sticky so they can be tapped repeatedly.
 
 The rest of the right side has a number of symbols that can be used in
 conjunction with the number layer to perform calculations. When any of these
-symbols are tapped the keyboard will return to the **number and navigation
-layer**. This is intended to simplify working with a calculator. The positions
-of the symbols mirror their positions in lower layers.
+symbols are tapped the keyboard will return to the **navigation layer**. This is
+intended to simplify working with a calculator. The positions of the symbols
+mirror their positions in lower layers.
 
 Again, the thumb keys remain consistent: the `Space` and `Enter` thumb keys are
 on the inside and the `Base Layer` thumb key is on the outside left. All three
@@ -147,7 +146,11 @@ of these keys return the keyboard to the **base layer**.
 
 The `Sym Layer` thumb key reappears on the far right to return the keyboard to
 the **symbol layer**. This means that a double tap of the thumb key will return
-the keyboard to the **number and navigation layer**.
+the keyboard to the **navigation layer**.
+
+## Shortcuts Layer
+
+![Shortcuts Layer](https://i.imgur.com/GvyCGRD.png)
 
 ## Layer Navigation
 
@@ -156,6 +159,8 @@ predictable way without having to know which layer you are currently in.
 
 **To get to the base layer** tap the *outside right* followed by the *outside
 left* thumb keys.
+
+**To get to the shortcut layer** tap the *outside right* key once.
 
 **To get to the number layer** tap the *outside right* thumb key twice.
 
