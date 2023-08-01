@@ -31,7 +31,7 @@ support open source projects and communities, folks.
 
 ## Base Layer
 
-![Base Layer](https://i.imgur.com/rQCSlum.png)
+![Base Layer](https://i.imgur.com/J2UlPS4.png)
 
 The base layer uses [Colemak DH](https://colemakmods.github.io/mod-dh/)
 [2020](https://forum.colemak.com/topic/2638-announcement-a-change-to-colemakdh/),
@@ -44,36 +44,32 @@ tapped. It does nothing when held down. The `Sym Layer` thumb key switches the
 keyboard into the **symbol layer** for one key press only, and the keyboard will
 return to the **base layer** immediately after a symbol key has been tapped.
 
-Tap dance is enabled and double taps on the following keys produce different key
-presses:
-
-* Double tapping the `Z` key produces `Caps Lock`
-* Double tapping the `X` key produces `Ctrl-X` (i.e. cut)
-* Double tapping the `C` key produces `Ctrl-V` (i.e. copy)
-* Double tapping the `V` key produces `Ctrl-C` (i.e. paste)
-* Double tapping the `F` key produces `Ctrl-F` (i.e. page down in Vim)
-* Double tapping the `B` key produces `Ctrl-B` (i.e. page up in Vim)
+The lower right key switches the keyboard into the **shortcut Layer** for one
+key press only, and they keyboard will return to the **base layer** immediately
+after a shortcut key has been tapped. The lower right key in the **shortcut
+layer** emits a `/` so effectively the key can be double tapped to produce `/`
+or `?`.
 
 Home row modifiers are available on the following keys:
 
-* Hold `R` or `I` for `Win`
+* Hold `A` or `O` for `Shift`
+* Hold `R` or `I` for `Ctrl`
 * Hold `S` or `E` for `Alt`
-* Hold `T` or `N` for `Ctrl`
+* Hold `T` or `N` for `Win`
 
 These keys can be held down alone or in combination. For example, on Windows you
 might hold down the `E` key - for `Alt` - then tap `F` followed by `S` to access
 the File menu followed by the Save menu entry. Or, if you use 1Password, you
-might hold down `N` - for `Ctrl`- then tap `Shift` followed by `Space` to pull
-up the 1Password quick access window.
+might hold down `I` and `O` - for `Ctrl` and `Shift` - followed by `Space` to
+pull up the 1Password quick access window.
 
-The `Space` key can be held to produce the `Hyper` modifier, which is actually
-the combination of the `Shift`, `Ctrl`, `Alt` and `Win` keys pressed
-together. This can be used to bind global shortcuts using programs like
-AutoHotKey.
+## Shortcuts Layer
+
+![Shortcuts Layer](https://i.imgur.com/sOSF0vU.png)
 
 ## Symbol Layer
 
-![Symbol Layer](https://i.imgur.com/zaIR99n.png)
+![Symbol Layer](https://i.imgur.com/72YZLxs.png)
 
 The **symbol layer** is influenced by the way symbols are laid out on UK ISO
 keyboards. The symbols usually found above `2` to `8` are on the top row. The
@@ -99,21 +95,23 @@ which returns the keyboard to the **base layer**.
 As well as producing their respective key presses, the `Space` and `Enter` thumb
 keys will also return the keyboard to the **base layer** when tapped.
 
-## Number and Navigation Layer
+## Navigation Layer
 
-![Number and Navigation Layer](https://i.imgur.com/zfo0K7G.png)
+![Navigation Layer](https://i.imgur.com/CfNIpuh.png)
 
 The top row is taken up by numbers as they appear on standard-sized keyboards.
 On the right side there are arrow keys arranged in the traditional Vim
 navigation format (like `HJKL` in QWERTY keyboards) with the `Home`, `Page
-Down`, `Page Up` and `End` keys below them. The `Delete` and `Insert` keys are
-on the inside right.
+Down`, `Page Up` and `End` keys below them. The `Scroll Up` and `Scroll Down`
+keys emulate the mouse scrollwheel and can be used to move up and down
+documents.
 
 There are a set of modified `Tab` keys on the left hand side for navigating
-between tabs and windows: `Ctrl-Tab`, `Alt-Tab` and `Win-Tab`. In addition,
-for Windows 11, there are two macros bound to keys that will switch to previous
-and next virtual desks. The `Left Button` and `Right Button` keys serve as
-alternative mouse buttons when using an external trackball or trackpad.
+between tabs and windows: `Ctrl-Tab` and `Alt-Tab`. The `Close Tab` key will
+close the currently active tab. In addition, for Windows 11, there are two
+macros bound to keys that will switch to previous and next virtual desks. The
+`Left Button` and `Right Button` keys serve as alternative mouse buttons when
+using an external trackball or trackpad.
 
 On the bottom left the `Func Layer` key switches the keyboard into the
 **function layer**.
@@ -127,7 +125,7 @@ layer, all three of these keys return the keyboard to the **base layer**.
 
 ## Function Layer
 
-![Function Layer](https://i.imgur.com/MhngS8s.png)
+![Function Layer](https://i.imgur.com/Qp5Gbsm.png)
 
 Twelve function keys take up most of the left side. When any of the function
 keys are tapped the keyboard returns to the **base layer**.
@@ -176,22 +174,22 @@ Strictly speaking, the same could be said about the first sequence of taps as
 well, but is useful to remember *outside right*, *outside left* as a panic
 sequence of sorts to get back to the beginning and clear your head.
 
-##  How To Compile and Flash RP2040 Firmware
+##  How To Compile and Flash Firmware
 
-First compile the firmware as normal:
-
-```shell
-qmk compile -kb ferris/sweep -km hbmorrison
-```
-
-Then convert the `ferris_sweep_hbmorrison.hex` file to a `.uf2` file for the
-rp2040 controller by running:
+First compile the firmware for ProMicro RP2040:
 
 ```shell
-make CONVERT_TO=kb2040 ferris/sweep:hbmorrison:uf2-split-left
+qmk compile -kb ferris/sweep -km hbmorrison -e CONVERT_TO=promicro_rp2040
 ```
 
-Once the conversion has completed, the make command will wait for the keyboard
-bootloader to be mounted. Unplug the USB cable from the Ferris Sweep, hold down
-the top left key and, while holding the key down, plug the USB cable back into
-the **left-hand side controller** on the keyboard.
+Hold the reset button for > 1 second to cause the board to go into bootloader
+mode. The controller will mount a USB drive onto the computer. Copy the new
+firmware into the USB drive. The firmware will be in the root folder of this
+repo, named:
+
+```
+ferris_sweep_hbmorrison_promicro_rp2040.uf2
+```
+
+The drive will then unmount. Tap the reset button for < 500ms to cause the
+board to reset, and the new firmware to start running.
