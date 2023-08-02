@@ -25,3 +25,9 @@
 	path = lib/lvgl
 	url = https://github.com/qmk/lvgl.git
 	branch = release/v8.2
+[submodule "keyboards/ferris/keymaps/hbmorrison"]
+	path = keyboards/ferris/keymaps/hbmorrison
+	url = git@github.com:hbmorrison/ferris-sweep.git
+[submodule "keyboards/planck/rev7/keymaps/hbmorrison"]
+	path = keyboards/planck/rev7/keymaps/hbmorrison
+	url = git@github.com:hbmorrison/olkb-planck.git
