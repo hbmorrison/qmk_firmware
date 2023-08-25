@@ -33,3 +33,7 @@
 	path = keyboards/planck/rev7/keymaps/hbmorrison
 	url = git@github.com:hbmorrison/olkb-planck.git
 	branch = develop
+[submodule "keyboards/ferris/keymaps/hold"]
+	path = keyboards/ferris/keymaps/hold
+	url = git@github.com:hbmorrison/ferris-sweep-hold.git
+	branch = develop
