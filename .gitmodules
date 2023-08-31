@@ -41,3 +41,7 @@
 	path = keyboards/planck/rev7/keymaps/hold
 	url = git@github.com:hbmorrison/planck-hold.git
 	branch = develop
+[submodule "keyboards/ferris/keymaps/sidekey"]
+	path = keyboards/ferris/keymaps/sidekey
+	url = git@github.com:hbmorrison/ferris-sweep-sidekey.git
+	branch = develop
