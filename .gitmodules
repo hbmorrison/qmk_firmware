@@ -44,7 +44,7 @@
 [submodule "keyboards/ferris/keymaps/sidekey"]
 	path = keyboards/ferris/keymaps/sidekey
 	url = git@github.com:hbmorrison/ferris-sweep-sidekey.git
-	branch = develop
+	branch = thumbkeys
 [submodule "keyboards/planck/rev7/keymaps/sidekey"]
 	path = keyboards/planck/rev7/keymaps/sidekey
 	url = git@github.com:hbmorrison/planck-sidekey.git
