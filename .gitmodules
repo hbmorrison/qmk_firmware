@@ -53,3 +53,7 @@
 	path = keyboards/ferris/keymaps/thumbkeys
 	url = git@github.com:hbmorrison/ferris-sweep-thumbkeys.git
 	branch = develop
+[submodule "keyboards/ferris/keymaps/28keys"]
+	path = keyboards/ferris/keymaps/28keys
+	url = git@github.com:hbmorrison/28keys.git
+	branch = develop
