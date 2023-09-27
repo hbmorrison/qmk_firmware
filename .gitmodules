@@ -57,3 +57,7 @@
 	path = keyboards/ferris/keymaps/28keys
 	url = git@github.com:hbmorrison/28keys.git
 	branch = develop
+[submodule "keyboards/planck/rev7/keymaps/thumbkeys"]
+	path = keyboards/planck/rev7/keymaps/thumbkeys
+	url = git@github.com:hbmorrison/planck-thumbkeys.git
+	branch = develop
