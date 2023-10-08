@@ -64,3 +64,4 @@
 [submodule "users/hbmorrison"]
 	path = users/hbmorrison
 	url = git@github.com:hbmorrison/qmk-hbmorrison.git
+	branch = develop
