@@ -61,3 +61,6 @@
 	path = keyboards/planck/rev7/keymaps/thumbkeys
 	url = git@github.com:hbmorrison/planck-thumbkeys.git
 	branch = develop
+[submodule "users/hbmorrison"]
+	path = users/hbmorrison
+	url = git@github.com:hbmorrison/qmk-hbmorrison.git
