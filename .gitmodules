@@ -25,3 +25,7 @@
 	path = lib/lvgl
 	url = https://github.com/qmk/lvgl.git
 	branch = release/v8.2
+[submodule "users/hbmorrison"]
+	path = users/hbmorrison
+	url = git@github.com:hbmorrison/qmk_users_hbmorrison.git
+        branch = develop
