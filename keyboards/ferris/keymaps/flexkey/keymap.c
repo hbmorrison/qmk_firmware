@@ -19,12 +19,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "flexkey.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [LAYER_BASE] = FK_LAYOUT_ferris_sweep( FK_TEST_LAYOUT_BASE ),
-  [LAYER_FILL_LEFT] = FK_LAYOUT_ferris_sweep( FK_TEST_LAYOUT_FILL_LEFT ),
-  [LAYER_FILL_RIGHT] = FK_LAYOUT_ferris_sweep( FK_TEST_LAYOUT_FILL_RIGHT ),
-  [LAYER_SYM_LEFT] = FK_LAYOUT_ferris_sweep( FK_TEST_LAYOUT_SYM_LEFT ),
-  [LAYER_SYM_RIGHT] = FK_LAYOUT_ferris_sweep( FK_TEST_LAYOUT_SYM_RIGHT ),
-  [LAYER_NAV] = FK_LAYOUT_ferris_sweep( FK_TEST_LAYOUT_NAV ),
-  [LAYER_NUM] = FK_LAYOUT_ferris_sweep( FK_TEST_LAYOUT_NUM ),
-  [LAYER_FUNC] = FK_LAYOUT_ferris_sweep( FK_TEST_LAYOUT_FUNC )
+  [LAYER_BASE] = FK_LAYOUT_ferris_sweep( LAYOUT_BASE ),
+  [LAYER_EXT_LEFT] = FK_LAYOUT_ferris_sweep( LAYOUT_EXT_LEFT ),
+  [LAYER_EXT_RIGHT] = FK_LAYOUT_ferris_sweep( LAYOUT_EXT_RIGHT ),
+  [LAYER_SYM_LEFT] = FK_LAYOUT_ferris_sweep( LAYOUT_SYM_LEFT ),
+  [LAYER_SYM_RIGHT] = FK_LAYOUT_ferris_sweep( LAYOUT_SYM_RIGHT ),
+  [LAYER_NAV] = FK_LAYOUT_ferris_sweep( LAYOUT_NAV ),
+  [LAYER_NUM] = FK_LAYOUT_ferris_sweep( LAYOUT_NUM ),
+  [LAYER_FUNC] = FK_LAYOUT_ferris_sweep( LAYOUT_FUNC )
 };
