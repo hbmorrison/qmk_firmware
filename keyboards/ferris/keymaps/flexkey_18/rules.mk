@@ -1,5 +1,4 @@
 USER_NAME := flexkey
-SRC += flexkey.c
 
 # Flexkey layout features.
 
