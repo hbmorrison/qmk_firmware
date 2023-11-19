@@ -26,5 +26,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_SYM_RIGHT] = FK_LAYOUT_ferris_sweep( LAYOUT_SYM_RIGHT ),
   [LAYER_NAV] = FK_LAYOUT_ferris_sweep( LAYOUT_NAV ),
   [LAYER_NUM] = FK_LAYOUT_ferris_sweep( LAYOUT_NUM ),
-  [LAYER_FUNC] = FK_LAYOUT_ferris_sweep( LAYOUT_FUNC )
+  [LAYER_FUNC] = FK_LAYOUT_ferris_sweep( LAYOUT_FUNC ),
+  [LAYER_SCUT] = FK_LAYOUT_ferris_sweep( LAYOUT_SCUT )
 };
