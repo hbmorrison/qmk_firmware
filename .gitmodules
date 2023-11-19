@@ -37,3 +37,6 @@
 	path = users/flexkey
 	url = git@github.com:hbmorrison/qmk_users_flexkey.git
         branch = develop
+[submodule "keyboards/zilpzalp"]
+	path = keyboards/zilpzalp
+	url = git@github.com:hbmorrison/qmk_keyboards_zilpzalp.git
