@@ -29,10 +29,6 @@
 	path = users/hbmorrison
 	url = git@github.com:hbmorrison/qmk_users_hbmorrison.git
         branch = develop
-[submodule "keyboards/ferris/keymaps/hbmjson"]
-	path = keyboards/ferris/keymaps/hbmjson
-	url = git@github.com:hbmorrison/ferris-sweep-json.git
-        branch = develop
 [submodule "users/flexkey"]
 	path = users/flexkey
 	url = git@github.com:hbmorrison/qmk_users_flexkey.git
